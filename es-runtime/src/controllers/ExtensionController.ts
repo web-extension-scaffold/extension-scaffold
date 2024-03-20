@@ -109,7 +109,7 @@ class ApiImpl implements ExtensionScaffoldApi {
     }
 
     private async loadExtension(url: string) {
-        const module = await import(url)
+        const module = await import(/* @vite-ignore */ url)
         return this.activateExtension(module, url)
     }
 

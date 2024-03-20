@@ -1,6 +1,6 @@
 
 const mode = import.meta.env.NODE_ENV;
-const securityUrl = import.meta.env[`ES_SECURITY_URL_${mode}`];
+const securityUrl = import.meta.env[`VITE_ES_SECURITY_URL_${mode}`];
 
 export const fetchTokenInfo = async () => {
   const url = `${securityUrl}/api/userinfo/getPrincipal`;
