@@ -13,7 +13,6 @@ export default defineConfig({
     host: true
   },
   build: {
-    outDir: urlPath ? `${urlPath}/dist` : 'dist',
     base: urlPath,
   },
 });
