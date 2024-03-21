@@ -5,23 +5,21 @@ require('dotenv').config();
 const urlPath = process.env.URLPATH || ''
 
 export default defineConfig({
+  base: urlPath,
   root: '.',
   plugins: [
     reactRefresh(),
   ],
   server: {
     port: 8080,
-    host: true,
-    proxy: {
-      "/es/ui": {
-        target: "http://es-home:8080/es/ui",
-        changeOrigin: true,
-        secure: false,
-      }
-    }
+    strictPort: true,
+    host: '0.0.0.0',
+    base: '/',
   },
   build: {
-    outDir: urlPath ? `${urlPath}/dist` : 'dist',
+    minify: false,
+    sourcemap: true,
     base: urlPath,
+    outDir: "dist"
   },
 });

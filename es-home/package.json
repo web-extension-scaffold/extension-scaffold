@@ -14,6 +14,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "check-types": "tsc --noEmit",
     "prebuild": "tsc --project sw",
+    "prestart": "tsc --project sw",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
     "container": "npm run maybe-install && npm run resolve-applications && vite dev",

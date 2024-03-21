@@ -20,12 +20,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import './index.css'
 
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://snowpack.dev/concepts/hot-module-replacement
-// if (import.meta.hot) {
-//   import.meta.hot.accept();
-// }
-
 interface Placement {
   location: Location
   order: string
