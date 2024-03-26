@@ -6,15 +6,26 @@ require('dotenv').config();
 const urlPath = process.env.URLPATH || ''
 
 export default defineConfig({
+  base: urlPath,
   plugins: [
     reactRefresh(),
     babel(),
   ],
   server: {
     port: 8080,
-    host: true
+    strictPort: true,
+    host: '0.0.0.0',
+    base: '/',
   },
   build: {
     base: urlPath,
+    outDir: "dist",
+    rollupOptions: {
+      output: {
+        entryFileNames: `[name].js`,
+        chunkFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`
+      }
+    }
   },
 });

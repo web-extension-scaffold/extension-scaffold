@@ -1,5 +1,5 @@
 {
-    "url": "/es/ui/dist/extensions/console-extension.js",
+    "url": "/es/ui/dist/console-extension.js",
     "provides": [
         {
             "title": "Debug Console",

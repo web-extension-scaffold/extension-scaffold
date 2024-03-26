@@ -17,9 +17,14 @@ export default defineConfig({
     base: '/',
   },
   build: {
-    minify: false,
-    sourcemap: true,
     base: urlPath,
-    outDir: "dist"
+    outDir: "dist",
+    rollupOptions: {
+      output: {
+        entryFileNames: `[name].js`,
+        chunkFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`
+      }
+    }
   },
 });
