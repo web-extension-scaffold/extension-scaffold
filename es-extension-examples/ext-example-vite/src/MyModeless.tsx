@@ -32,7 +32,7 @@ export const MyModeless: React.FC<{
             div
         );
         // Must be after render above
-        claimStyleFromHeadElement(div, '#ext.example.snowpack')
+        claimStyleFromHeadElement(div, '#ext.example.vite')
     }
 
     return <><div className='MyPanel' onClick={handleClick}>

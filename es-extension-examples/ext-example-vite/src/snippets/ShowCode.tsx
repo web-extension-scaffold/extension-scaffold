@@ -29,7 +29,7 @@ export const ShowCode: React.FC<{
   es: ExtensionScaffoldApi
 }> = ({ es, children }) => {
   function handleClose() {
-    es.chrome.panels.removePanel('ext.example.snowpack.code')
+    es.chrome.panels.removePanel('ext.example.vite.code')
     window.dispatchEvent(new CustomEvent('example-hide-code'))
   }
 

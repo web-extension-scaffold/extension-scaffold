@@ -59,7 +59,7 @@ const AmplifyPanel: React.FC<{
 
 export const Amplify: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     const [open, setOpen] = React.useState(false)
-    const amplifyPanelID = 'ext.snowpack.amplify.portal'
+    const amplifyPanelID = 'ext.vite.amplify.portal'
 
     React.useEffect(() => {
         if (open) {

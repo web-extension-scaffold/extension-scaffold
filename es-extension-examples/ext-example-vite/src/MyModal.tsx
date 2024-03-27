@@ -10,7 +10,7 @@ export const MyModal: React.FC<{
     esId: string
 }> = ({ es, esId }) => {
     function handleClick() {
-        console.log('snowpack clicked')
+        console.log('vite clicked')
     }
     function handleMaximize() {
         es.chrome.panels.maximizePanel(esId)
@@ -29,7 +29,7 @@ export const MyModal: React.FC<{
             div
         );
         // Must be after render above
-        claimStyleFromHeadElement(div, '#ext.example.snowpack')
+        claimStyleFromHeadElement(div, '#ext.example.vite')
     }
 
     return <><div className='MyPanel' onClick={handleClick}>

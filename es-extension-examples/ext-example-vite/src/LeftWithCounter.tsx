@@ -11,7 +11,7 @@ export async function addLeftWithCounter(es: ExtensionScaffoldApi) {
     ReactDOM.render(<TabWithCounter es={es} />, span)
 
     const panelDiv = await es.chrome.panels.addPanel({
-        id: 'ext.snowpack.left.with.counter',
+        id: 'ext.vite.left.with.counter',
         title: 'Vite Left',
         icon: span,
         location: 'left',
@@ -30,7 +30,7 @@ const TabWithCounter: React.FC<{es: ExtensionScaffoldApi}> = ({es}) => {
     const [count, setCount] = React.useState(0)
 
     React.useEffect(() => {
-        subscribeJson('es.example.snowpack.count.change', (_, message: any) => {
+        subscribeJson('es.example.vite.count.change', (_, message: any) => {
             if (message.change) {
                 setCount(c => c + message.change)
             }
@@ -42,10 +42,10 @@ const TabWithCounter: React.FC<{es: ExtensionScaffoldApi}> = ({es}) => {
 export const LeftWithCounter: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
 
     function handleAdd() {
-        publishJson('es.example.snowpack.count.change', { change: 1 })
+        publishJson('es.example.vite.count.change', { change: 1 })
     }
     function handleSubtract() {
-        publishJson('es.example.snowpack.count.change', { change: -1 })
+        publishJson('es.example.vite.count.change', { change: -1 })
     }
 
     return <div style={{

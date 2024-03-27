@@ -12,7 +12,7 @@ export async function addLeftSecurityExample(es: ExtensionScaffoldApi) {
     ReactDOM.render(<TabSecurityExample es={es} />, span)
 
     const panelDiv = await es.chrome.panels.addPanel({
-        id: 'ext.snowpack.left.security.example',
+        id: 'ext.vite.left.security.example',
         title: 'Security Example',
         icon: span,
         location: 'left',

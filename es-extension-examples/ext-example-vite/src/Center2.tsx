@@ -8,11 +8,11 @@ export const Center2: React.FC<{
     es: ExtensionScaffoldApi
 }> = ({ es }) => {
     function handleClose() {
-        es.chrome.panels.removePanel('ext.example.snowpack.2')
+        es.chrome.panels.removePanel('ext.example.vite.2')
     }
     async function handleAdd() {
         const div = await es.chrome.panels.addPanel({
-            id: 'ext.example.snowpack.3',
+            id: 'ext.example.vite.3',
             location: 'center'
         })
         ReactDOM.render(

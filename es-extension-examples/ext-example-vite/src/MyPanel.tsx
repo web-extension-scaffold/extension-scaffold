@@ -12,17 +12,17 @@ export const MyPanel: React.FC<{
         console.log('vite clicked')
     }
     function handleMaximize() {
-        es.chrome.panels.maximizePanel('ext.example.snowpack')
+        es.chrome.panels.maximizePanel('ext.example.vite')
     }
     function handleRestore() {
-        es.chrome.panels.restorePanel('ext.example.snowpack')
+        es.chrome.panels.restorePanel('ext.example.vite')
     }
     function handleClose() {
-        es.chrome.panels.removePanel('ext.example.snowpack')
+        es.chrome.panels.removePanel('ext.example.vite')
     }
     function handleAddCenter() {
         es.chrome.panels.addPanel({
-            id: 'ext.example.snowpack.2',
+            id: 'ext.example.vite.2',
             location: 'center',
         }).then(onPanelAdded)
     }
@@ -34,13 +34,13 @@ export const MyPanel: React.FC<{
             div
         );
         // Must be after render above
-        claimStyleFromHeadElement(div, '#ext.example.snowpack')
+        claimStyleFromHeadElement(div, '#ext.example.vite')
     }
     function handleShowRollupPanel() {
         es.chrome.panels.showPanel('ext.example.rollup')
     }
     function handleShowVite() {
-        es.chrome.panels.showPanel('ext.snowpack.left')
+        es.chrome.panels.showPanel('ext.vite.left')
     }
 
     return <><div className='MyPanel' onClick={handleClick}>

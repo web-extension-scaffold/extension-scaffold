@@ -11,13 +11,13 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
         addCenterPanel(es)
     }
     function handlePopOut() {
-        es.chrome.panels.popOutPanel('ext.snowpack.left')
+        es.chrome.panels.popOutPanel('ext.vite.left')
     }
     function handlePopIn() {
-        es.chrome.panels.popInPanel('ext.snowpack.left')
+        es.chrome.panels.popInPanel('ext.vite.left')
     }
     function handleHide() {
-        es.chrome.panels.hidePanel('ext.snowpack.left')
+        es.chrome.panels.hidePanel('ext.vite.left')
     }
     function handleMoveToRight() {
         moveLeftToRight(es)
@@ -34,13 +34,13 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     }
 
     function handleModelessDialog() {
-        addModelessPanel(es, 'ext.example.snowpack.modeless')
+        addModelessPanel(es, 'ext.example.vite.modeless')
     }
     function handleModalDialog() {
-        addModalPanel(es, 'ext.example.snowpack.modal')
+        addModalPanel(es, 'ext.example.vite.modal')
     }
     function handleModelessDialog2() {
-        addModelessPanel(es, 'ext.example.snowpack.modeless.2')
+        addModelessPanel(es, 'ext.example.vite.modeless.2')
     }
     function handleDiagonalStaggeredModelessDialog() {
         addDiagonalStaggerPanel(es, `ext.example.stagger-${uuidv4()}`)
@@ -50,7 +50,7 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     }
     function handleIframeModeless() {
         es.chrome.panels.addPanel({
-            id: 'snowpack.iframe.modeless',
+            id: 'vite.iframe.modeless',
             location: 'modeless',
             iframeSource: '/foo/bar',
             hideButton: true,
@@ -59,14 +59,14 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
                 height: '40em'
             }
         }).catch(() => {
-            es.chrome.panels.showPanel('snowpack.iframe.modeless')
+            es.chrome.panels.showPanel('vite.iframe.modeless')
         })
     }
 
     return <div style={{
         padding: '1em',
     }}>
-        Left example from snowpack
+        Left example from vite
         <p></p>
         <div>
             <button onClick={handleAddCenter}>Add Center</button>

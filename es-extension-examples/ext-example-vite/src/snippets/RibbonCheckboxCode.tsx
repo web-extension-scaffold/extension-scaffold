@@ -4,7 +4,7 @@ import { FormatCode } from './FormatCode'
 export const RibbonCheckboxCode = () => {
   const codeString = `
   function toggleViteLeft() {
-    scaffold.chrome.panels.togglePanel('ext.snowpack.left')
+    scaffold.chrome.panels.togglePanel('ext.vite.left')
   }
   claimRibbonWith(scaffold, 'settings.group.one', 
     <es-ribbon-section label="Group 1">

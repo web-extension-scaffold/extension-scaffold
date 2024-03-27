@@ -38,31 +38,31 @@ async function doPanel(scaffold: ExtensionScaffoldApi, options: AddPanelOptions,
 
 async function doHeader(scaffold: ExtensionScaffoldApi) {
   const panelDiv = await doPanel(scaffold, {
-    id: 'ext.snowpack.header',
+    id: 'ext.vite.header',
     location: 'header'
   }, <Header es={scaffold} />)
-  claimStyleFromHeadElement(panelDiv, '#ext.example.snowpack')
+  claimStyleFromHeadElement(panelDiv, '#ext.example.vite')
 }
 
 async function doFooter(scaffold: ExtensionScaffoldApi) {
   const panelDiv = await doPanel(scaffold, {
-    id: 'ext.snowpack.footer',
+    id: 'ext.vite.footer',
     location: 'footer'
   }, <Footer es={scaffold} />)
-  claimStyleFromHeadElement(panelDiv, '#ext.example.snowpack')
+  claimStyleFromHeadElement(panelDiv, '#ext.example.vite')
 }
 
 async function doBottom(scaffold: ExtensionScaffoldApi) {
-  const defaultLocation = localStorage.getItem('ext.snowpack.bottom') as Location ?? null
+  const defaultLocation = localStorage.getItem('ext.vite.bottom') as Location ?? null
   return await doPanel(scaffold, {
-    id: 'ext.snowpack.bottom',
+    id: 'ext.vite.bottom',
     location: 'bottom-bar',
     title: 'Time Slider',
     popOutButton: true,
     dockLocationButton: ["modeless", "left"],
     removeButton: true, // NOTE: if you enable this you should have a way to add the panel
     defaultDockLocation: defaultLocation ? defaultLocation : 'bottom-bar',
-    saveDockLocationPreference: (currentLocation: string) => localStorage.setItem('ext.snowpack.bottom', currentLocation) 
+    saveDockLocationPreference: (currentLocation: string) => localStorage.setItem('ext.vite.bottom', currentLocation)
   }, <Bottom es={scaffold} />)
 }
 
@@ -76,7 +76,7 @@ async function doLeft(scaffold: ExtensionScaffoldApi, forceRight?: boolean) {
   ReactDOM.render(icon, span)
 
   return await doPanel(scaffold, {
-    id: 'ext.snowpack.left',
+    id: 'ext.vite.left',
     title: 'Vite Left',
     icon: span,
     location: forceRight ? 'right' : 'left',
@@ -86,11 +86,11 @@ async function doLeft(scaffold: ExtensionScaffoldApi, forceRight?: boolean) {
 }
 
 export async function moveLeftToRight(scaffold: ExtensionScaffoldApi) {
-  scaffold.chrome.panels.removePanel('ext.snowpack.left')
+  scaffold.chrome.panels.removePanel('ext.vite.left')
   doLeft(scaffold, true)
 }
 export async function moveRightToLeft(scaffold: ExtensionScaffoldApi) {
-  scaffold.chrome.panels.removePanel('ext.snowpack.left')
+  scaffold.chrome.panels.removePanel('ext.vite.left')
   doLeft(scaffold)
 }
 
@@ -102,10 +102,10 @@ export function addCenterPanel(scaffold: ExtensionScaffoldApi) {
       </React.StrictMode>,
       div
     );
-    claimStyleFromHeadElement(div, '#ext.example.snowpack')
+    claimStyleFromHeadElement(div, '#ext.example.vite')
   }
   scaffold.chrome.panels.addPanel({
-    id: 'ext.example.snowpack',
+    id: 'ext.example.vite',
     location: 'center'
   }).then(onPanelAdded).catch(console.error)
 }
@@ -118,7 +118,7 @@ export function addModelessPanel(scaffold: ExtensionScaffoldApi, esId: string) {
       </React.StrictMode>,
       div
     );
-    claimStyleFromHeadElement(div, '#ext.example.snowpack')
+    claimStyleFromHeadElement(div, '#ext.example.vite')
   }
   scaffold.chrome.panels.addPanel({
     id: esId,
@@ -137,7 +137,7 @@ export function addDiagonalStaggerPanel(scaffold: ExtensionScaffoldApi, esId: st
       </React.StrictMode>,
       div
     );
-    claimStyleFromHeadElement(div, '#ext.example.snowpack')
+    claimStyleFromHeadElement(div, '#ext.example.vite')
   }
   scaffold.chrome.panels.addPanel({
     id: esId,
@@ -165,7 +165,7 @@ export function addTiledStaggerPanel(scaffold: ExtensionScaffoldApi, esId: strin
       </React.StrictMode>,
       div
     );
-    claimStyleFromHeadElement(div, '#ext.example.snowpack')
+    claimStyleFromHeadElement(div, '#ext.example.vite')
   }
   scaffold.chrome.panels.addPanel({
     id: esId,
@@ -193,7 +193,7 @@ export function addModalPanel(scaffold: ExtensionScaffoldApi, esId: string) {
       </React.StrictMode>,
       div
     );
-    claimStyleFromHeadElement(div, '#ext.example.snowpack')
+    claimStyleFromHeadElement(div, '#ext.example.vite')
   }
   scaffold.chrome.panels.addPanel({
     id: esId,
