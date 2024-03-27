@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import type { ExtensionScaffoldApi } from "@moesol/es-runtime/build/es-api"
 import { Center3 } from './Center3'
-import './Center2.css' // snowpack injects this at the head, but we claim it in MyPanel.tsx
+import './Center2.css'
 
 export const Center2: React.FC<{ 
     es: ExtensionScaffoldApi

@@ -77,7 +77,7 @@ async function doLeft(scaffold: ExtensionScaffoldApi, forceRight?: boolean) {
 
   return await doPanel(scaffold, {
     id: 'ext.snowpack.left',
-    title: 'Snowpack Left',
+    title: 'Vite Left',
     icon: span,
     location: forceRight ? 'right' : 'left',
     relocating: forceRight ? true : false,

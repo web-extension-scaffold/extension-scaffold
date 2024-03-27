@@ -3,7 +3,7 @@ import { FormatCode } from './FormatCode'
 
 export const RibbonCheckboxCode = () => {
   const codeString = `
-  function toggleSnowpackLeft() {
+  function toggleViteLeft() {
     scaffold.chrome.panels.togglePanel('ext.snowpack.left')
   }
   claimRibbonWith(scaffold, 'settings.group.one', 
@@ -12,7 +12,7 @@ export const RibbonCheckboxCode = () => {
       <div style={{ display: 'flex', flexDirection: 'column'}}>
         <label><input type="checkbox"></input>Show Something</label>
         <label><input type="checkbox"></input>Show Something Else</label>
-        <es-ribbon-button onClick={toggleSnowpackLeft}><div>Show Snowpack Left</div></es-ribbon-button>
+        <es-ribbon-button onClick={toggleViteLeft}><div>Show Vite Left</div></es-ribbon-button>
       </div>
     </es-ribbon-section>
   )

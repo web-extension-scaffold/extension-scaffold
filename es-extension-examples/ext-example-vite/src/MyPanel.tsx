@@ -9,7 +9,7 @@ export const MyPanel: React.FC<{
     es: ExtensionScaffoldApi
 }> = ({ es }) => {
     function handleClick() {
-        console.log('snowpack clicked')
+        console.log('vite clicked')
     }
     function handleMaximize() {
         es.chrome.panels.maximizePanel('ext.example.snowpack')
@@ -39,12 +39,12 @@ export const MyPanel: React.FC<{
     function handleShowRollupPanel() {
         es.chrome.panels.showPanel('ext.example.rollup')
     }
-    function handleShowSnowpack() {
+    function handleShowVite() {
         es.chrome.panels.showPanel('ext.snowpack.left')
     }
 
     return <><div className='MyPanel' onClick={handleClick}>
-        MyPanel - snowpack - with a whole lot of text so that if a panel is over this Panel
+        MyPanel - with a whole lot of text so that if a panel is over this Panel
         you can still see that something is here.
 
         <div className='buttons'>
@@ -53,7 +53,7 @@ export const MyPanel: React.FC<{
             <button onClick={handleClose}>Close Me</button>
             <button onClick={handleAddCenter}>Add Center</button>
             <button onClick={handleShowRollupPanel}>Show Rollup</button>
-            <button onClick={handleShowSnowpack}>Show Snowpack</button>
+            <button onClick={handleShowVite}>Show Vite</button>
         </div>
     </div>
     </>

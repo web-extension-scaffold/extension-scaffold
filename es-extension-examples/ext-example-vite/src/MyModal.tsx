@@ -33,7 +33,7 @@ export const MyModal: React.FC<{
     }
 
     return <><div className='MyPanel' onClick={handleClick}>
-        Modal - snowpack - with a whole lot of text so that if a panel is over this Panel
+        Modal - with a whole lot of text so that if a panel is over this Panel
         you can still see that something is here.
 
         <div className='buttons'>

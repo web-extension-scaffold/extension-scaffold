@@ -10,7 +10,7 @@ export const MyModeless: React.FC<{
     esId: string
 }> = ({ es, esId }) => {
     function handleClick() {
-        console.log('snowpack clicked')
+        console.log('vite clicked')
     }
     function handleMaximize() {
         es.chrome.panels.maximizePanel(esId)
@@ -36,7 +36,7 @@ export const MyModeless: React.FC<{
     }
 
     return <><div className='MyPanel' onClick={handleClick}>
-        MyPanel - snowpack - with a whole lot of text so that if a panel is over this Panel
+        MyPanel - with a whole lot of text so that if a panel is over this Panel
         you can still see that something is here.
         <p>{esId}</p>
 

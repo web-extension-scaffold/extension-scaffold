@@ -1,6 +1,4 @@
-# Example Snowpack Extension
-
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+# Example Vite Extension
 
 This is an example of an extension.
 Extensions are where the primary functionality should be hosted.
@@ -9,7 +7,7 @@ are wrapped in a shadow DOM so that each extension does not
 have to worry about the CSS of other extensions interacting
 with its components.
 
-This extension uses React as the component library and `snowpack` as its bundler.
+This extension uses React as the component library and `vite` as its bundler.
 
 ## Available Scripts
 
@@ -25,8 +23,6 @@ You will also see any lint errors in the console.
 
 Builds a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.js` config file.
 
 ### npm test
 

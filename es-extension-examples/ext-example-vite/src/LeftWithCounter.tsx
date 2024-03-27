@@ -12,7 +12,7 @@ export async function addLeftWithCounter(es: ExtensionScaffoldApi) {
 
     const panelDiv = await es.chrome.panels.addPanel({
         id: 'ext.snowpack.left.with.counter',
-        title: 'Snowpack Left',
+        title: 'Vite Left',
         icon: span,
         location: 'left',
     })
