@@ -82,7 +82,7 @@ Below is an example for `example.json`
   "right": ["ext.example.rollup", "ext.example.webpack"],
   "top-bar": ["ext.snowpack.ribbon"],
   "bottom-bar": ["ext.snowpack.bottom", "ext.example.lit-element"],
-  "extensions": ["/ui/ext-example-snowpack/dist/ext-react-snowpack.js"],
+  "extensions": ["/ui/ext-example-vite/dist/ext-react-vite.js"],
   "iframes": [
     {
       "id": "es.example.iframe",
@@ -163,7 +163,7 @@ Example:
 
 ```json
     "extensions": [
-        "/ui/ext-example-snowpack/dist/ext-react-snowpack.js"
+        "/ui/ext-example-vite/dist/ext-react-vite.js"
     ],
 ```
 
@@ -185,11 +185,11 @@ but it should list the panel IDs that will be needed by *applications*.
 These IDs are then used by `es-home/scripts/resolve-applications.js` to compute
 which extensions are needed by an *application*.
 
-Below is a possible example for the ext-example-snowpack:
+Below is a possible example for the ext-example-vite:
 
 ```json
 {
-    "url": "http://localhost:9091/dist/ext-react-snowpack.js",
+    "url": "http://localhost:9091/dist/ext-react-vite.js",
     "provides": [
         {
             "title": "Example Header",
@@ -300,13 +300,13 @@ Finally, these files are combined to produce `public/xxx.json`:
     "ext.example.lit-element"
   ],
   "extensions": [
-    "/ui/ext-example-snowpack/dist/ext-react-snowpack.js",
+    "/ui/ext-example-vite/dist/ext-react-vite.js",
     "/es/common/dist/theme-extension.js",
     "/es/ui/dist/extensions/console-extension.js",
     "/es/ui/dist/extensions/network-extension.js",
     "/es/common/dist/debug-metrics.js",
     "/es/ui/dist/extensions/help-about-extension.js",
-    "http://localhost:9091/dist/ext-react-snowpack.js",
+    "http://localhost:9091/dist/ext-react-vite.js",
     "http://localhost:9092/ext-react-rollup.js",
     "http://localhost:9093/ext-react-webpack.js",
     "http://localhost:9094/dist/ext-lit-element.js"

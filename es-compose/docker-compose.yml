@@ -66,10 +66,10 @@ services:
       - DO_INSTALL
     command: "npm run container"
 
-  ext-example-snowpack:
+  ext-example-vite:
     image: ${NODE_TAG}
     user: "node"
-    working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-snowpack"
+    working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-vite"
     volumes: 
       - "/etc/ssl/certs:/etc/ssl/certs"
       - "../:/home/extension-scaffold"

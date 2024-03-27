@@ -1,5 +1,5 @@
 {
-  "name": "@moesol/ext-example-snowpack",
+  "name": "@moesol/ext-example-vite",
   "version": "2.12.0-SNAPSHOT",
   "private": true,
   "scripts": {

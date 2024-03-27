@@ -116,7 +116,7 @@ importers:
       tslib: 2.5.0
       typescript: 4.8.4
 
-  ../../es-extension-examples/ext-example-snowpack:
+  ../../es-extension-examples/ext-example-vite:
     specifiers:
       '@moesol/es-runtime': workspace:*
       '@moesol/inter-widget-communication': ^2.8.0-SNAPSHOT.0

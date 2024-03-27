@@ -32,7 +32,7 @@ import { extensionScaffold } from '@moesol/es-runtime/build/es-api'
 async function loadExtensions() {
   extensionScaffold.boot(document.getElementById('demo-grid-container'))
   
-  await extensionScaffold.loadExtension('http://localhost:9091/dist/ext-react-snowpack.js')
+  await extensionScaffold.loadExtension('http://localhost:9091/dist/ext-react-vite.js')
   await extensionScaffold.loadExtension('http://localhost:9092/ext-react-rollup.js')
   await extensionScaffold.loadExtension('http://localhost:5000/build/ext-svelte-rollup.js')
   await extensionScaffold.loadExtension('http://localhost:9093/ext-react-webpack.js')

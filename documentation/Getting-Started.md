@@ -44,13 +44,13 @@ Then add your extension to `es-home/public/apps/example.json`:
 
 ```json
   "extensions": [
-    "/ui/ext-example-snowpack/dist/ext-react-snowpack.js",
+    "/ui/ext-example-vite/dist/ext-react-vite.js",
     "/es/common/dist/theme-extension.js",
     "/es/ui/dist/extensions/console-extension.js",
     "/es/ui/dist/extensions/network-extension.js",
     "/es/common/dist/debug-metrics.js",
     "/es/ui/dist/extensions/help-about-extension.js",
-    "http://localhost:9091/dist/ext-react-snowpack.js",
+    "http://localhost:9091/dist/ext-react-vite.js",
     "http://localhost:9092/ext-react-rollup.js",
     "http://localhost:9093/ext-react-webpack.js",
     "http://localhost:9094/dist/ext-lit-element.js",
@@ -197,7 +197,7 @@ export async function activate(scaffold: ExtensionScaffoldApi, url: string) {
 
 ## Dynamically Adding and Removing a Modeless Panel
 
-File: `es-extension-examples/ext-example-snowpack/src/ext-react-snowpack.tsx`
+File: `es-extension-examples/ext-example-vite/src/ext-react-vite.tsx`
 
 ```ts
 export function addModelessPanel(scaffold: ExtensionScaffoldApi, esId: string) {
@@ -220,10 +220,10 @@ export function addModelessPanel(scaffold: ExtensionScaffoldApi, esId: string) {
 }
 ```
 
-File: `es-extension-examples/ext-example-snowpack/src/Left.tsx`
+File: `es-extension-examples/ext-example-vite/src/Left.tsx`
 
 ```ts
-import { addModelessPanel } from './ext-react-snowpack'
+import { addModelessPanel } from './ext-react-vite'
 
     function handleModelessDialog() {
         addModelessPanel(es, 'ext.example.snowpack.modeless')

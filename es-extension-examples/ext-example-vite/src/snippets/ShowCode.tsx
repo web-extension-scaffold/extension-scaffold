@@ -1,6 +1,6 @@
 import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import React from 'react'
-import { activatedAtUrl } from '../ext-react-snowpack'
+import { activatedAtUrl } from '../ext-react-vite'
 
 interface UseCode {
   cachedCodeString?: string
