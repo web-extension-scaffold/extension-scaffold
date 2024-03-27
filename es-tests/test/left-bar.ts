@@ -22,22 +22,22 @@ LeftBar('should initially have rollup as active panel', async ctx => {
   assert.is(title, 'Rollup Left')
 })
 
-LeftBar('click Snowpack Left button', async ctx => {
+LeftBar('click Vite Left button', async ctx => {
   const { page } = ctx
-  await page.click('button[title="Snowpack Left"]')
-  assert.ok(await page.isVisible('text=Left example from snowpack'))
+  await page.click('button[title="Vite Left"]')
+  assert.ok(await page.isVisible('text=Left example from vite'))
 
   // Clicking the same button will close the panel
-  await page.click('button[title="Snowpack Left"]')
-  assert.ok(! await page.isVisible('text=Left example from snowpack'))
+  await page.click('button[title="Vite Left"]')
+  assert.ok(! await page.isVisible('text=Left example from vite'))
 
-  // The snowpack button is not-active
-  const classList = await page.getAttribute('button[title="Snowpack Left"]', 'class')
+  // The vite button is not-active
+  const classList = await page.getAttribute('button[title="Vite Left"]', 'class')
   assert.is(classList, 'es-bar-button')
 
   // And again will open the panel
-  await page.click('button[title="Snowpack Left"]')
-  assert.ok(await page.isVisible('text=Left example from snowpack'))
+  await page.click('button[title="Vite Left"]')
+  assert.ok(await page.isVisible('text=Left example from vite'))
 })
 
 LeftBar('click Rollup Left button', async ctx => {

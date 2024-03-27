@@ -28,7 +28,7 @@ The panel layout is managed using a grid layout.
 
 ## Building extensions for Vite
 
-Vite bundles resources in the `dist` folder differently than snowpack, not preserving folder structure nor a
+Vite bundles resources in the `dist` folder differently than other libraries, not preserving folder structure nor a
 human-readable format for generated files. Therefore, if you wish to export extensions (ie. `ext-lit-element.js`)
 in a format that will usable by `es-home/data/extensions/<ext>.json` and be available at the given `url`
 you must follow the below instructions.  

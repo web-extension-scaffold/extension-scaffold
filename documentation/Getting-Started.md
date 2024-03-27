@@ -208,7 +208,7 @@ export function addModelessPanel(scaffold: ExtensionScaffoldApi, esId: string) {
       </React.StrictMode>,
       div
     );
-    claimStyleFromHeadElement(div, '#ext.example.snowpack')
+    claimStyleFromHeadElement(div, '#ext.example.vite')
   }
   scaffold.chrome.panels.addPanel({
     id: esId,
@@ -226,7 +226,7 @@ File: `es-extension-examples/ext-example-vite/src/Left.tsx`
 import { addModelessPanel } from './ext-react-vite'
 
     function handleModelessDialog() {
-        addModelessPanel(es, 'ext.example.snowpack.modeless')
+        addModelessPanel(es, 'ext.example.vite.modeless')
     }
 ```
 

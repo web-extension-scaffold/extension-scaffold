@@ -12,7 +12,7 @@ npm install -D @moesol/es-runtime
 ```
 
 The `es-application-examples/es-demo` folder contains an example "hosting" SPA 
-that is based the `snowpack` bundler and the `typescript` language.
+that is based on the `typescript` language.
 > Note: To simplify information assurance scans `es-demo` was removed from the `develop` and `release` branches.
 > However, you can view `es-demo` by checking out the tag `v2.4.0`.
 > Or you can review the source code for `es-home`.

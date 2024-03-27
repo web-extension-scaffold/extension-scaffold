@@ -3,23 +3,23 @@
     "provides": [
         {
             "title": "Example Header",
-            "id": "ext.snowpack.header"
+            "id": "ext.vite.header"
         },
         {
             "title": "Example Footer",
-            "id": "ext.snowpack.footer"
+            "id": "ext.vite.footer"
         },
         {
             "title": "Example Ribbon",
-            "id": "ext.snowpack.ribbon"
+            "id": "ext.vite.ribbon"
         },
         {
             "title": "Time Slider",
-            "id": "ext.snowpack.bottom"
+            "id": "ext.vite.bottom"
         },
         {
-            "title": "Snowpack Left",
-            "id": "ext.snowpack.left"
+            "title": "Vite Left",
+            "id": "ext.vite.left"
         }
     ]
 }

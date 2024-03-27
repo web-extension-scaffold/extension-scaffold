@@ -34,7 +34,7 @@ export class AppRoot extends LitElement {
   render() {
     return html`
       <div class="wrapper">
-        <h1>Ext LitElement + Snowpack</h1>
+        <h1>Ext LitElement + Vite</h1>
         <p>Edit <code>src/app-root.ts</code> and save to reload.</p>
         <a
           class="link"

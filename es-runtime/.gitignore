@@ -1,3 +1,5 @@
-.snowpack
+dist/
+.env
+.vite/
 build
 node_modules

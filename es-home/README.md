@@ -78,13 +78,13 @@ Below is an example for `example.json`
       ]
     }
   ],
-  "header": ["ext.snowpack.header"],
-  "footer": ["ext.snowpack.footer"],
-  "left": ["ext.snowpack.left"],
-  "center": ["ext.example.snowpack"],
+  "header": ["ext.vite.header"],
+  "footer": ["ext.vite.footer"],
+  "left": ["ext.vite.left"],
+  "center": ["ext.example.vite"],
   "right": ["ext.example.rollup", "ext.example.webpack"],
-  "top-bar": ["ext.snowpack.ribbon"],
-  "bottom-bar": ["ext.snowpack.bottom", "ext.example.lit-element"],
+  "top-bar": ["ext.vite.ribbon"],
+  "bottom-bar": ["ext.vite.bottom", "ext.example.lit-element"],
   "extensions": ["/ui/ext-example-vite/dist/ext-react-vite.js"],
   "iframes": [
     {
@@ -131,7 +131,7 @@ Example:
 
 ```json
   "center": [
-      "ext.example.snowpack"
+      "ext.example.vite"
   ],
 ```
 
@@ -188,7 +188,7 @@ but it should list the panel IDs that will be needed by *applications*.
 These IDs are then used by `es-home/scripts/resolve-applications.js` to compute
 which extensions are needed by an *application*.
 
-Below is a possible example for the snowpack example:
+Below is a possible example for the vite example:
 
 ```json
 {
@@ -196,23 +196,23 @@ Below is a possible example for the snowpack example:
     "provides": [
         {
             "title": "Example Header",
-            "id": "ext.snowpack.header"
+            "id": "ext.vite.header"
         },
         {
             "title": "Example Footer",
-            "id": "ext.snowpack.footer"
+            "id": "ext.vite.footer"
         },
         {
             "title": "Example Ribbon",
-            "id": "ext.snowpack.ribbon"
+            "id": "ext.vite.ribbon"
         },
         {
             "title": "Time Slider",
-            "id": "ext.snowpack.bottom"
+            "id": "ext.vite.bottom"
         },
         {
-            "title": "Snowpack Left",
-            "id": "ext.snowpack.left"
+            "title": "Vite Left",
+            "id": "ext.vite.left"
         }
     ]
 }
@@ -283,23 +283,23 @@ Finally, these files are combined to produce `public/example.json`:
     }
   ],
   "header": [
-    "ext.snowpack.header"
+    "ext.vite.header"
   ],
   "footer": [
-    "ext.snowpack.footer"
+    "ext.vite.footer"
   ],
   "left": [
-    "ext.snowpack.left"
+    "ext.vite.left"
   ],
   "right": [
     "ext.example.rollup",
     "ext.example.webpack"
   ],
   "top-bar": [
-    "ext.snowpack.ribbon"
+    "ext.vite.ribbon"
   ],
   "bottom-bar": [
-    "ext.snowpack.bottom",
+    "ext.vite.bottom",
     "ext.example.lit-element"
   ],
   "extensions": [
