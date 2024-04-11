@@ -1,6 +1,5 @@
 import reactRefresh from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-require('dotenv').config();
 
 const urlPath = process.env.URLPATH || ''
 
@@ -17,9 +16,11 @@ export default defineConfig({
     base: '/',
   },
   build: {
+    minify: false,
     base: urlPath,
     outDir: "dist",
     rollupOptions: {
+      preserveEntrySignatures: true,
       output: {
         entryFileNames: `[name].js`,
         chunkFileNames: `[name].js`,

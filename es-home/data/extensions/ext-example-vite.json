@@ -1,5 +1,5 @@
 {
-    "url": "http://localhost:9091/dist/ext-react-vite.js",
+    "url": "/ext-example-vite/dist/ext-react-vite.js",
     "provides": [
         {
             "title": "Example Header",
