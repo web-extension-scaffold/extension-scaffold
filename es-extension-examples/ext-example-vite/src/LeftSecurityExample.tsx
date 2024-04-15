@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import { fetchTokenInfo } from './securityRequests';
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
 import { publishJson, subscribeJson, unsubscribe } from '@moesol/inter-widget-communication';
 
 export async function addLeftSecurityExample(es: ExtensionScaffoldApi) {

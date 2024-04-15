@@ -1,5 +1,5 @@
 import Tonic from '@optoolco/tonic'
-import { extensionScaffold, Location, LOCATIONS } from '@moesol/es-runtime/build/es-api'
+import { extensionScaffold, Location, LOCATIONS } from '@moesol/es-runtime/src/es-api'
 
 function panelIDs() {
   const ids: string[] = []

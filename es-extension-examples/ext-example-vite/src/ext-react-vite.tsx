@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MyPanel } from './MyPanel';
 
-import type { AddPanelOptions, ExtensionScaffoldApi, Location } from '@moesol/es-runtime/build/es-api'
+import type { AddPanelOptions, ExtensionScaffoldApi, Location } from '@moesol/es-runtime/src/es-api'
 import { Header } from './Header';
 import { Left } from './Left'
 import { Footer } from './Footer';

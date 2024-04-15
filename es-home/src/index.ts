@@ -1,6 +1,5 @@
-import './ensure-build';
-import { AddPanelOptions, extensionScaffold, Location, GridState } from '@moesol/es-runtime/build/es-api'
-import { applyGridState, getGridState } from '@moesol/es-runtime/build/utils'
+import { AddPanelOptions, extensionScaffold, Location, GridState } from '@moesol/es-runtime/src/es-api'
+import { applyGridState, getGridState } from '@moesol/es-runtime/src/utils'
 import { initialize, subscribeJson } from '@moesol/inter-widget-communication';
 import Tonic from '@optoolco/tonic'
 import { EsAddExtension } from './components/add-extension';

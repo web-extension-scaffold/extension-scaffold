@@ -1,6 +1,6 @@
 import Tonic from "@optoolco/tonic"
 import { EsDebugConsole, LOGS, MAX_LOGS } from "./debug-console"
-import { extensionScaffold } from '@moesol/es-runtime/build/es-api'
+import { extensionScaffold } from '@moesol/es-runtime/src/es-api'
 import { publishJson } from '@moesol/inter-widget-communication';
 
 const HELP_CONSOLE_DISPLAY = 'help.console.display'

@@ -1,5 +1,5 @@
 import React from 'react'
-import type { ExtensionScaffoldApi } from "@moesol/es-runtime/build/es-api"
+import type { ExtensionScaffoldApi } from "@moesol/es-runtime/src/es-api"
 import './Center2.css'
 
 export const Bottom: React.FC<{ 

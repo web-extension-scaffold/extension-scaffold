@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { SecurityInfo } from './SecurityInfo';
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
 
 /**
  * Helper functions to avoid if (div === null) broiler plate.

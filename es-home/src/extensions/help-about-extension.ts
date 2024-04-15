@@ -1,4 +1,4 @@
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
 import runtimePkg from '@moesol/es-runtime/package.json'
 
 //

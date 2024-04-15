@@ -1,5 +1,5 @@
 {
-    "url": "/es/ui/dist/network-extension.js",
+    "url": "/es/ui/dist/extensions/network-extension.js",
     "provides": [
         {
             "title": "Debug Network",

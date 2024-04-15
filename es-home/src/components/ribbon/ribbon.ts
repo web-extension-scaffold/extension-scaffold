@@ -1,4 +1,4 @@
-import type { ExtensionScaffoldApi, RibbonBar } from '@moesol/es-runtime/build/es-api'
+import type { ExtensionScaffoldApi, RibbonBar } from '@moesol/es-runtime/src/es-api'
 import Tonic from '@optoolco/tonic'
 import { EsRibbonSection } from './ribbon-section';
 import { EsRibbonRow } from './ribbon-row';
