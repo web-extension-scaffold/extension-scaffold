@@ -1,0 +1,9 @@
+{
+    "url": "/ext-example-vite/ext-react-vite.js",
+    "provides": [
+        {
+            "title": "Vite Example",
+            "id": "ext.example.vite"
+        }
+    ]
+}
