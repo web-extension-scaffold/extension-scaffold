@@ -20,8 +20,8 @@ export async function activate(scaffold: ExtensionScaffoldApi) {
   ReactDOM.render(svg, span)
 
   scaffold.chrome.panels.addPanel({
-    id: 'ext.example.rollup',
-    title: 'Rollup Left',
+    id: 'ext.example.vite',
+    title: 'Vite Example',
     icon: span,
     location: 'left',
     resizeHandle: true,

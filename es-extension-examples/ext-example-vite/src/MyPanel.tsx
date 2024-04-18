@@ -3,7 +3,7 @@ import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 
 export const MyPanel: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     function handleClick() {
-        es.chrome.panels.hidePanel('ext.example.rollup')
+        es.chrome.panels.hidePanel('ext.example.vite')
     }
     const css = `
     .inner {

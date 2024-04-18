@@ -3,13 +3,16 @@
     "version": "2.12.0-SNAPSHOT",
     "dependencies": {
         "react": "^17.0.2",
-        "react-dom": "^17.0.2"
+        "react-dom": "^17.0.2",
+        "@vitejs/plugin-react": "~4.2.1",
+        "dotenv": "~16.4.5"
     },
     "scripts": {
-        "start": "DO_SERVE=true rollup --config --watch",
-        "build": "rollup --config",
+        "start": "vite dev",
+        "build": "vite build",
+        "check-types": "tsc --noEmit",
         "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-        "container": "npm run maybe-install && DO_SERVE=true rollup --config --watch"
+        "container": "npm run maybe-install && vite dev"
     },
     "devDependencies": {
         "@moesol/es-runtime": "workspace:*",
@@ -22,6 +25,7 @@
         "rollup-plugin-serve": "^1.1.0",
         "rollup-plugin-typescript2": "^0.30.0",
         "tslib": "^2.2.0",
-        "typescript": "~4.8.2"
+        "typescript": "~4.8.2",
+        "vite": "~5.2.9"
     }
 }
