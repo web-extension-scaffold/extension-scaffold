@@ -66,6 +66,20 @@ services:
       - DO_INSTALL
     command: "npm run container"
 
+  ext-example-vite:
+    image: ${NODE_TAG}
+    user: "node"
+    working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-vite"
+    volumes:
+      - "/etc/ssl/certs:/etc/ssl/certs"
+      - "../:/home/extension-scaffold"
+      - "./home-node:/home/node"
+    ports:
+      - "127.0.0.1:9098:9098"
+    environment:
+      - DO_INSTALL
+    command: "npm run container"
+
   ext-example-snowpack:
     image: ${NODE_TAG}
     user: "node"
