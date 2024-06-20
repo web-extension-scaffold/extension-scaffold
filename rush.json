@@ -420,6 +420,10 @@
       "projectFolder": "es-extension-examples/ext-example-svelte"
     },
     {
+      "packageName": "@moesol/ext-example-vite",
+      "projectFolder": "es-extension-examples/ext-example-vite"
+    },
+    {
       "packageName": "@moesol/ext-example-webpack",
       "projectFolder": "es-extension-examples/ext-example-webpack"
     },
