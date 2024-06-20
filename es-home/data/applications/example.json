@@ -41,14 +41,14 @@
       ]
     }
   ],
-  "header": ["ext.vite.header"],
-  "footer": ["ext.vite.footer"],
-  "left": ["ext.vite.left"],
-  "center": ["ext.example.vite"],
+  "header": ["ext.basic.header"],
+  "footer": ["ext.basic.footer"],
+  "left": ["ext.basic.left"],
+  "center": ["ext.example.basic"],
   "right": ["ext.example.rollup", "ext.example.webpack"],
-  "top-bar": ["ext.vite.ribbon"],
-  "bottom-bar": ["ext.vite.bottom", "ext.example.lit-element"],
-  "extensions": ["/ext-example-vite/dist/ext-react-vite.js"],
+  "top-bar": ["ext.basic.ribbon"],
+  "bottom-bar": ["ext.basic.bottom", "ext.example.lit-element"],
+  "extensions": ["/ext-example-basic/dist/ext-react-basic.js"],
   "iframes": [
     {
       "id": "es.example.iframe",

@@ -78,14 +78,14 @@ Below is an example for `example.json`
       ]
     }
   ],
-  "header": ["ext.vite.header"],
-  "footer": ["ext.vite.footer"],
-  "left": ["ext.vite.left"],
-  "center": ["ext.example.vite"],
+  "header": ["ext.basic.header"],
+  "footer": ["ext.basic.footer"],
+  "left": ["ext.basic.left"],
+  "center": ["ext.example.basic"],
   "right": ["ext.example.rollup", "ext.example.webpack"],
-  "top-bar": ["ext.vite.ribbon"],
-  "bottom-bar": ["ext.vite.bottom", "ext.example.lit-element"],
-  "extensions": ["/ui/ext-example-vite/dist/ext-react-vite.js"],
+  "top-bar": ["ext.basic.ribbon"],
+  "bottom-bar": ["ext.basic.bottom", "ext.example.lit-element"],
+  "extensions": ["/ui/ext-example-basic/dist/ext-react-basic.js"],
   "iframes": [
     {
       "id": "es.example.iframe",
@@ -131,7 +131,7 @@ Example:
 
 ```json
   "center": [
-      "ext.example.vite"
+      "ext.example.basic"
   ],
 ```
 
@@ -166,7 +166,7 @@ Example:
 
 ```json
     "extensions": [
-        "/ui/ext-example-vite/dist/ext-react-vite.js"
+        "/ui/ext-example-basic/dist/ext-react-basic.js"
     ],
 ```
 
@@ -192,27 +192,27 @@ Below is a possible example for the vite example:
 
 ```json
 {
-    "url": "http://localhost:9091/dist/ext-react-vite.js",
+    "url": "http://localhost:9091/dist/ext-react-basic.js",
     "provides": [
         {
             "title": "Example Header",
-            "id": "ext.vite.header"
+            "id": "ext.basic.header"
         },
         {
             "title": "Example Footer",
-            "id": "ext.vite.footer"
+            "id": "ext.basic.footer"
         },
         {
             "title": "Example Ribbon",
-            "id": "ext.vite.ribbon"
+            "id": "ext.basic.ribbon"
         },
         {
             "title": "Time Slider",
-            "id": "ext.vite.bottom"
+            "id": "ext.basic.bottom"
         },
         {
-            "title": "Vite Left",
-            "id": "ext.vite.left"
+            "title": "Basic Left",
+            "id": "ext.basic.left"
         }
     ]
 }
@@ -283,33 +283,33 @@ Finally, these files are combined to produce `public/example.json`:
     }
   ],
   "header": [
-    "ext.vite.header"
+    "ext.basic.header"
   ],
   "footer": [
-    "ext.vite.footer"
+    "ext.basic.footer"
   ],
   "left": [
-    "ext.vite.left"
+    "ext.basic.left"
   ],
   "right": [
     "ext.example.rollup",
     "ext.example.webpack"
   ],
   "top-bar": [
-    "ext.vite.ribbon"
+    "ext.basic.ribbon"
   ],
   "bottom-bar": [
-    "ext.vite.bottom",
+    "ext.basic.bottom",
     "ext.example.lit-element"
   ],
   "extensions": [
-    "/ui/ext-example-vite/dist/ext-react-vite.js",
+    "/ui/ext-example-basic/dist/ext-react-basic.js",
     "/es/common/dist/theme-extension.js",
     "/es/ui/dist/extensions/console-extension.js",
     "/es/ui/dist/extensions/network-extension.js",
     "/es/common/dist/debug-metrics.js",
     "/es/ui/dist/extensions/help-about-extension.js",
-    "http://localhost:9091/dist/ext-react-vite.js",
+    "http://localhost:9091/dist/ext-react-basic.js",
     "http://localhost:9092/ext-react-rollup.js",
     "http://localhost:9093/ext-react-webpack.js",
     "http://localhost:9094/dist/ext-lit-element.js"

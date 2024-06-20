@@ -1,25 +1,25 @@
 {
-    "url": "/ext-example-vite/dist/ext-react-vite.js",
+    "url": "/ext-example-basic/dist/ext-react-basic.js",
     "provides": [
         {
             "title": "Example Header",
-            "id": "ext.vite.header"
+            "id": "ext.basic.header"
         },
         {
             "title": "Example Footer",
-            "id": "ext.vite.footer"
+            "id": "ext.basic.footer"
         },
         {
             "title": "Example Ribbon",
-            "id": "ext.vite.ribbon"
+            "id": "ext.basic.ribbon"
         },
         {
             "title": "Time Slider",
-            "id": "ext.vite.bottom"
+            "id": "ext.basic.bottom"
         },
         {
-            "title": "Vite Left",
-            "id": "ext.vite.left"
+            "title": "Basic Left",
+            "id": "ext.basic.left"
         }
     ]
 }

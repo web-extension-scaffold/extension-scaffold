@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
-import { addCenterPanel, addDiagonalStaggerPanel, addModalPanel, addModelessPanel, addTiledStaggerPanel, moveLeftToRight, moveRightToLeft } from './ext-react-vite'
+import { addCenterPanel, addDiagonalStaggerPanel, addModalPanel, addModelessPanel, addTiledStaggerPanel, moveLeftToRight, moveRightToLeft } from './ext-react-basic'
 import { Amplify } from './Amplify'
 import { SampleModal } from './SampleModal'
 
@@ -11,13 +11,13 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
         addCenterPanel(es)
     }
     function handlePopOut() {
-        es.chrome.panels.popOutPanel('ext.vite.left')
+        es.chrome.panels.popOutPanel('ext.basic.left')
     }
     function handlePopIn() {
-        es.chrome.panels.popInPanel('ext.vite.left')
+        es.chrome.panels.popInPanel('ext.basic.left')
     }
     function handleHide() {
-        es.chrome.panels.hidePanel('ext.vite.left')
+        es.chrome.panels.hidePanel('ext.basic.left')
     }
     function handleMoveToRight() {
         moveLeftToRight(es)
@@ -34,13 +34,13 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     }
 
     function handleModelessDialog() {
-        addModelessPanel(es, 'ext.example.vite.modeless')
+        addModelessPanel(es, 'ext.example.basic.modeless')
     }
     function handleModalDialog() {
-        addModalPanel(es, 'ext.example.vite.modal')
+        addModalPanel(es, 'ext.example.basic.modal')
     }
     function handleModelessDialog2() {
-        addModelessPanel(es, 'ext.example.vite.modeless.2')
+        addModelessPanel(es, 'ext.example.basic.modeless.2')
     }
     function handleDiagonalStaggeredModelessDialog() {
         addDiagonalStaggerPanel(es, `ext.example.stagger-${uuidv4()}`)

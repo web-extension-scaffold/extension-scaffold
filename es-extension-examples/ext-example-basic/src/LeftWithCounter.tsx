@@ -11,7 +11,7 @@ export async function addLeftWithCounter(es: ExtensionScaffoldApi) {
     ReactDOM.render(<TabWithCounter es={es} />, span)
 
     const panelDiv = await es.chrome.panels.addPanel({
-        id: 'ext.vite.left.with.counter',
+        id: 'ext.basic.left.with.counter',
         title: 'Vite Left',
         icon: span,
         location: 'left',

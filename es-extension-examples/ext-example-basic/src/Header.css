@@ -1,11 +1,12 @@
-#ext.example.vite {
+#ext.example.basic {
     background-color: lightblue;
 }
 
-.footer {
+.header {
     background: darkgreen;
     color: white;
     display: flex;
     justify-content: center;
     padding: 4px;
+    font-size: 8pt;
 }

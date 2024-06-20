@@ -5,24 +5,26 @@ import { Center2 } from './Center2';
 import './MyPanel.css';
 import { claimStyleFromHeadElement } from './lib/claimStyleFromHeadElement';
 
-export const MyModeless: React.FC<{
+export const MyPanel: React.FC<{
     es: ExtensionScaffoldApi
-    esId: string
-}> = ({ es, esId }) => {
+}> = ({ es }) => {
     function handleClick() {
-        console.log('vite clicked')
+        console.log('basic clicked')
     }
     function handleMaximize() {
-        es.chrome.panels.maximizePanel(esId)
+        es.chrome.panels.maximizePanel('ext.example.basic')
     }
     function handleRestore() {
-        es.chrome.panels.restorePanel(esId)
-    }
-    function handleHide() {
-        es.chrome.panels.hidePanel(esId)
+        es.chrome.panels.restorePanel('ext.example.basic')
     }
     function handleClose() {
-        es.chrome.panels.removePanel(esId)
+        es.chrome.panels.removePanel('ext.example.basic')
+    }
+    function handleAddCenter() {
+        es.chrome.panels.addPanel({
+            id: 'ext.example.basic.2',
+            location: 'center',
+        }).then(onPanelAdded)
     }
     function onPanelAdded(div: HTMLDivElement) {
         ReactDOM.render(
@@ -32,19 +34,26 @@ export const MyModeless: React.FC<{
             div
         );
         // Must be after render above
-        claimStyleFromHeadElement(div, '#ext.example.vite')
+        claimStyleFromHeadElement(div, '#ext.example.basic')
+    }
+    function handleShowRollupPanel() {
+        es.chrome.panels.showPanel('ext.example.rollup')
+    }
+    function handleShowBasic() {
+        es.chrome.panels.showPanel('ext.basic.left')
     }
 
     return <><div className='MyPanel' onClick={handleClick}>
         MyPanel - with a whole lot of text so that if a panel is over this Panel
         you can still see that something is here.
-        <p>{esId}</p>
 
         <div className='buttons'>
             <button onClick={handleMaximize}>Maximize Me</button>
             <button onClick={handleRestore}>Restore Me</button>
-            <button onClick={handleHide}>Hide Me</button>
             <button onClick={handleClose}>Close Me</button>
+            <button onClick={handleAddCenter}>Add Center</button>
+            <button onClick={handleShowRollupPanel}>Show Rollup</button>
+            <button onClick={handleShowBasic}>Show Basic</button>
         </div>
     </div>
     </>

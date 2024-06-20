@@ -1,6 +1,6 @@
 import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import React from 'react'
-import { activatedAtUrl } from '../ext-react-vite'
+import { activatedAtUrl } from '../ext-react-basic'
 
 interface UseCode {
   cachedCodeString?: string
@@ -29,7 +29,7 @@ export const ShowCode: React.FC<{
   es: ExtensionScaffoldApi
 }> = ({ es, children }) => {
   function handleClose() {
-    es.chrome.panels.removePanel('ext.example.vite.code')
+    es.chrome.panels.removePanel('ext.example.basic.code')
     window.dispatchEvent(new CustomEvent('example-hide-code'))
   }
 

@@ -29,7 +29,7 @@ export const MyModal: React.FC<{
             div
         );
         // Must be after render above
-        claimStyleFromHeadElement(div, '#ext.example.vite')
+        claimStyleFromHeadElement(div, '#ext.example.basic')
     }
 
     return <><div className='MyPanel' onClick={handleClick}>

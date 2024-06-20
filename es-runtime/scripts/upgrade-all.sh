@@ -12,7 +12,7 @@ EXAMPLES="display-rules
 ext-example-angular
 ext-example-lit-element
 ext-example-rollup
-ext-example-vite
+ext-example-basic
 ext-example-solid
 ext-example-svelte
 ext-example-webpack"

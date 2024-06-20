@@ -113,7 +113,7 @@ export const SampleModal: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     React.useEffect(() => {
         if (open) {
             es.chrome.panels.addPanel({
-                id: 'ext.vite.samplemodal.portal',
+                id: 'ext.basic.samplemodal.portal',
                 location: 'portal-wide',
             }).then(portalDiv => {
                 ReactDOM.render(
@@ -121,7 +121,7 @@ export const SampleModal: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
                         buttonText={buttonText} />, portalDiv)
             })
         } else {
-            es.chrome.panels.removePanel('ext.vite.samplemodal.portal')
+            es.chrome.panels.removePanel('ext.basic.samplemodal.portal')
         }
     }, [open])
 

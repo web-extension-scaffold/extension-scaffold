@@ -141,7 +141,7 @@ importers:
       rollup-plugin-terser: 7.0.2_rollup@2.79.1
       svelte: 3.55.1
 
-  ../../es-extension-examples/ext-example-vite:
+  ../../es-extension-examples/ext-example-basic:
     specifiers:
       '@moesol/es-runtime': workspace:*
       '@moesol/inter-widget-communication': ^2.8.0-SNAPSHOT.0

@@ -1,5 +1,5 @@
 {
-  "name": "@moesol/ext-example-vite",
+  "name": "@moesol/ext-example-basic",
   "version": "2.12.0-SNAPSHOT",
   "private": true,
   "scripts": {
