@@ -1,5 +1,5 @@
 import Tonic from '@optoolco/tonic'
-import { extensionScaffold } from '@moesol/es-runtime/src/es-api'
+import { extensionScaffold } from '@moesol/es-runtime/build/es-api'
 import type { EsKbarRoute } from './kbar-route'
 import { datalistPanelIDs } from './show-panel-list'
 

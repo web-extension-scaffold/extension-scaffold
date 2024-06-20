@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { publishJson, subscribeJson, initialize } from '@moesol/inter-widget-communication';
 import { fetchTokenInfo } from './securityRequests';
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import { GenericModalPanel } from './GenericModal';
 import { Spinner } from './Spinner';
 

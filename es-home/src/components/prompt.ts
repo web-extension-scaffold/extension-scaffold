@@ -1,5 +1,5 @@
 import Tonic from '@optoolco/tonic'
-import { extensionScaffold, Location } from '@moesol/es-runtime/src/es-api'
+import { extensionScaffold, Location } from '@moesol/es-runtime/build/es-api'
 import { EsKbarRoute } from './kbar-route'
 
 export class EsPrompt extends Tonic {

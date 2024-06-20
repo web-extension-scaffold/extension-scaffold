@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 
 export const MyPanel: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     function handleClick() {

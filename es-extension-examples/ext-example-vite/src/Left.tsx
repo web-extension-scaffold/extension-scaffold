@@ -1,6 +1,6 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import { addCenterPanel, addDiagonalStaggerPanel, addModalPanel, addModelessPanel, addTiledStaggerPanel, moveLeftToRight, moveRightToLeft } from './ext-react-vite'
 import { Amplify } from './Amplify'
 import { SampleModal } from './SampleModal'

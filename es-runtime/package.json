@@ -11,13 +11,13 @@
   "author": "Moebius Solutions",
   "license": "BlueOak-1.0.0",
   "scripts": {
-    "build": "tsc -p tsconfig.json && npm run cp:css && npm run cp:material && vite build && tsc --emitDeclarationOnly",
+    "build": "tsc -p tsconfig.json && npm run cp:css && npm run cp:material && tsc",
     "cp:css": "copyfiles -u 1 src/*.css build",
     "cp:material": "copyfiles -u 1 node_modules/@material/elevation/dist/mdc.elevation.css build",
     "check-types": "tsc --noEmit",
     "prepack": "npm run build",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-    "container": "npm run maybe-install && vite dev",
+    "container": "npm run maybe-install",
     "upgrade-all": "./scripts/local-upgrade-all.sh "
   },
   "files": [
@@ -25,7 +25,6 @@
   ],
   "dependencies": {
     "events": "^3.3.0",
-    "@vitejs/plugin-react": "~4.2.1",
     "dotenv": "~16.4.5"
   },
   "devDependencies": {
@@ -37,7 +36,6 @@
     "chai": "~4.3.6",
     "copyfiles": "^2.4.1",
     "prettier": "^2.5.1",
-    "typescript": "~4.8.2",
-    "vite": "~5.1.6"
+    "typescript": "~4.8.2"
   }
 }

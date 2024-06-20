@@ -1,4 +1,4 @@
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import React from 'react'
 import { activatedAtUrl } from '../ext-react-vite'
 

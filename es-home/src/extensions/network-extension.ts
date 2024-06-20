@@ -1,5 +1,5 @@
 import Tonic from '@optoolco/tonic'
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import { EsDebugNetworkRibbonPanel } from './ribbon/debug-network-ribbon-panel'
 import { EsDebugNetwork } from './ribbon/debug-network'
 import { EsNetworkLines } from './ribbon/network-lines'

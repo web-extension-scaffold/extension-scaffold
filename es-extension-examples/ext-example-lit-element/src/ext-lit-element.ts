@@ -1,4 +1,4 @@
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import './app-root';
 import './ribbon-view-section1'
 

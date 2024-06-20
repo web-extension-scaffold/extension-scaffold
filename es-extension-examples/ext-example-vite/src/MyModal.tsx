@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 import { Center2 } from './Center2';
 import './MyPanel.css';
 import { claimStyleFromHeadElement } from './lib/claimStyleFromHeadElement';

@@ -1,7 +1,7 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 import { MyPanel } from './MyPanel';
-import type { ExtensionScaffoldApi } from '@moesol/es-runtime/src/es-api'
+import type { ExtensionScaffoldApi } from '@moesol/es-runtime/build/es-api'
 
 export async function activate(scaffold: ExtensionScaffoldApi) {
   function onPanelAdded(div: HTMLDivElement) {
