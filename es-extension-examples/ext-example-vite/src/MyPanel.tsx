@@ -13,7 +13,7 @@ export const MyPanel: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     return <>
         <style>{css}</style>
         <div className="panel">
-            <div className="inner">MyPanel - rollup&nbsp;
+            <div className="inner">MyPanel - vite&nbsp;
                 <button title="Close" onClick={handleClick}>X</button>
             </div>
         </div>
