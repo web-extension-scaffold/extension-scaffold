@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@moesol/inter-widget-communication": "^2.8.0-SNAPSHOT.0",
-    "@moesol/es-iframe-to-dev-ext": "workspace:*"
+    "@moesol/es-iframe-to-dev-ext": "workspace:*",
+    "dotenv": "~16.4.5"
   },
   "devDependencies": {
     "prettier": "^2.5.1",

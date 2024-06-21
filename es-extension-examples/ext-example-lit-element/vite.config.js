@@ -1,7 +1,8 @@
 import reactRefresh from '@vitejs/plugin-react';
 import babel from 'vite-plugin-babel';
 import { defineConfig } from 'vite';
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 const urlPath = process.env.URLPATH || ''
 

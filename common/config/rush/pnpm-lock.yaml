@@ -253,7 +253,7 @@ importers:
       camelcase: ^6.1.0
       case-sensitive-paths-webpack-plugin: 2.3.0
       css-loader: 4.3.0
-      dotenv: 8.2.0
+      dotenv: ~16.4.5
       dotenv-expand: 5.1.0
       eslint: ^7.11.0
       eslint-config-react-app: ^6.0.0
@@ -319,7 +319,7 @@ importers:
       camelcase: 6.3.0
       case-sensitive-paths-webpack-plugin: 2.3.0
       css-loader: 4.3.0_webpack@4.44.2
-      dotenv: 8.2.0
+      dotenv: 16.4.5
       dotenv-expand: 5.1.0
       eslint: 7.32.0
       eslint-config-react-app: 6.0.0_wpwmx5nwenkgii3hefclc3xele
@@ -374,6 +374,7 @@ importers:
     specifiers:
       '@moesol/es-iframe-to-dev-ext': workspace:*
       '@moesol/inter-widget-communication': ^2.8.0-SNAPSHOT.0
+      dotenv: ~16.4.5
       prettier: ^2.5.1
       typescript: ~4.8.2
       vite: ~2
@@ -381,6 +382,7 @@ importers:
     dependencies:
       '@moesol/es-iframe-to-dev-ext': link:../../es-iframe-to-dev-ext
       '@moesol/inter-widget-communication': 2.8.0-SNAPSHOT.0
+      dotenv: 16.4.5
     devDependencies:
       prettier: 2.8.3
       typescript: 4.8.4
@@ -6830,11 +6832,6 @@ packages:
   /dotenv/16.4.5:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
-    dev: false
-
-  /dotenv/8.2.0:
-    resolution: {integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==}
-    engines: {node: '>=8'}
     dev: false
 
   /duplexer/0.1.2:
