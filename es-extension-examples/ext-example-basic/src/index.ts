@@ -1,1 +1,1 @@
-import './ensure-build';
+import('./ext-react-basic')

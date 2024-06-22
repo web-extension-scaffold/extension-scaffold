@@ -28,26 +28,32 @@ The panel layout is managed using a grid layout.
 
 ## Building extensions for Vite
 
-Vite bundles resources in the `dist` folder differently than other libraries, not preserving folder structure nor a
-human-readable format for generated files. Therefore, if you wish to export extensions (ie. `ext-lit-element.js`)
-in a format that will usable by `es-home/data/extensions/<ext>.json` and be available at the given `url`
-you must follow the below instructions.  
+All extensions used by a package (`theme-extension`, `ext-lit-element`, ect) need to be added to vite.config.js under 
+`build.lib.entry`, along with an `index.ts` file (which will export these extension):
 
-In order for extensions to be bundled in human-readable format in the `dist` folder by vite, 
-they must be exported by your `ensure-build.ts` in the `src` directory. 
-For example, to export 'ext-lit-element.ts' in 'es-extension-examples/ext-example-lit-element':
+``` 
+// vite.config.js:
+build: {
+    lib: {
+        entry: ['./src/ext-lit-element.ts', './src/theme-extension.ts', './src/index.ts']
+    }
+}
+```
 
-1.) create an `ensure-build.ts` file in 'ext-example-lit-element/src' and add `import('./ext-lit-element')` to it 
-2.) import `ensure-build` into the index.ts inside your `src` directory (if you don't have an index.ts inside src,
-either create one or choose a file that will act as an entrypoint. usually, this is the file designated in
-your root index.html in the `script` tag `<script type="module" src="/src/index.ts"></script>`. Vite uses this file 
-as an entrypoint to your library)
-3.) run 'rush build' and ensure that the `ext-lit-element.js` now appears in your generated `dist` folder. (it should be at the root
-and will not have the same folder structure as the src folder it is copied from)
-4.) Go to where the extension is registered in `es-home/data/extensions/<ext>.json` and look at the 'url' section. 
+```javascript
+// add to /src/index.ts
+import('./theme-extension')
+import('./ext-lit-element')
+```
+
+After this is done, run 'rush build' and ensure that the `ext-lit-element.js` now appears in your generated `dist` 
+or `build` folder. 
+
+Then, go to where the extension is registered in `es-home/data/extensions/<ext>.json` and look at the 'url' section. 
 Ensure the url matches the location where the extension file currently exists in the generated `dist` folder. 
 For example, here is the extension for 'network-extension.json': `"url": "/es/ui/dist/network-extension.js"`. This
 means that 'network-extension' must exist in the root of the 'dist' folder.
 (Note that the proxy (example.conf) dictates that '/es/ui' is redirected to 'es-home')
-4.) restart application and ensure that the extension is loaded without 404 error in the network tab 
+
+Now restart application and ensure that the extension is loaded without 404 error in the network tab 
 

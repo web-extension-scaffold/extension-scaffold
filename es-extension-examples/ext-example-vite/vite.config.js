@@ -26,10 +26,10 @@ export default defineConfig({
   build: {
     outDir: 'build',
     base: urlPath,
-    /* lib config necessary to prevent "Failed to load extension Error" on ext-react-vite */
+    /* lib.entry config necessary to prevent "Failed to load extension Error" on ext-react-vite */
     lib: {
       name: "ext-example-vite",
-      entry: './src/ext-react-vite.tsx',
+      entry: ['./src/ext-react-vite.tsx'],
       formats: ['es']
     },
     rollupOptions: {
@@ -37,8 +37,9 @@ export default defineConfig({
         format: 'es',
         /* preserveEntrySignatures: true => rollup preserves the exact structure of exports in the entry point modules in the output bundle */
         preserveEntrySignatures: true,
-        /* entryFileNames necessary to create '/build/ext-react-vite.js' w/ correct structure */
-        entryFileNames: 'ext-react-vite.js',
+        entryFileNames: `[name].js`,
+        chunkFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`
       }
     },
   },
