@@ -24,6 +24,6 @@ of exports in the entry point modules
 #### paths in es-home/data 
 
 - make sure paths in es-home/data/applications/<example>.json & es-home/data/extensions/<extension>.json match the 
-location of the extension in the generated /build ("/ext-example-vite/build/ext-react-vite.js")
+location of the extension in the generated /build ("/ext-example-vite/dist/ext-react-vite.js")
 
 

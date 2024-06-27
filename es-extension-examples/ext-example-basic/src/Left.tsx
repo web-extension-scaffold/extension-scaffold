@@ -66,7 +66,7 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     return <div style={{
         padding: '1em',
     }}>
-        Left example from vite
+        Left example
         <p></p>
         <div>
             <button onClick={handleAddCenter}>Add Center</button>

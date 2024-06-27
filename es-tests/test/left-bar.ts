@@ -25,11 +25,11 @@ LeftBar('should initially have rollup as active panel', async ctx => {
 LeftBar('click Basic Left button', async ctx => {
   const { page } = ctx
   await page.click('button[title="Basic Left"]')
-  assert.ok(await page.isVisible('text=Left example from vite'))
+  assert.ok(await page.isVisible('text=Left example'))
 
   // Clicking the same button will close the panel
   await page.click('button[title="Basic Left"]')
-  assert.ok(! await page.isVisible('text=Left example from vite'))
+  assert.ok(! await page.isVisible('text=Left example'))
 
   // The basic button is not-active
   const classList = await page.getAttribute('button[title="Basic Left"]', 'class')
@@ -37,7 +37,7 @@ LeftBar('click Basic Left button', async ctx => {
 
   // And again will open the panel
   await page.click('button[title="Basic Left"]')
-  assert.ok(await page.isVisible('text=Left example from vite'))
+  assert.ok(await page.isVisible('text=Left example'))
 })
 
 LeftBar('click Rollup Left button', async ctx => {

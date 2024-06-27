@@ -24,7 +24,7 @@ export default defineConfig({
     base: '/',
   },
   build: {
-    outDir: 'build',
+    outDir: 'dist',
     base: urlPath,
     /* lib.entry config necessary to prevent "Failed to load extension Error" on ext-react-vite */
     lib: {
