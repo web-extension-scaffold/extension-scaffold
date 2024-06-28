@@ -17,4 +17,4 @@ Your app is ready to be deployed!
 
 ### Q: What about Eject?
 
-No eject needed! CSA strives for zero lock-in.
+No eject needed! Vite strives for zero lock-in.

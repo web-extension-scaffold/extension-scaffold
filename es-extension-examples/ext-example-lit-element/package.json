@@ -2,7 +2,7 @@
   "name": "@moesol/ext-example-lit-element",
   "version": "2.12.0-SNAPSHOT",
   "scripts": {
-    "start": "vite dev --port 9094",
+    "start": "vite dev",
     "build": "vite build",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\"",

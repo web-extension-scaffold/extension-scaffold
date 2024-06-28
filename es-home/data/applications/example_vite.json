@@ -48,7 +48,7 @@
   "right": ["ext.example.rollup", "ext.example.webpack"],
   "top-bar": ["ext.basic.ribbon"],
   "bottom-bar": ["ext.basic.bottom", "ext.example.lit-element"],
-  "extensions": ["/ext-example-basic/dist/ext-react-basic.js"],
+  "extensions": ["/ext-example-vite/dist/ext-react-vite.js"],
   "iframes": [
     {
       "id": "es.example.iframe",

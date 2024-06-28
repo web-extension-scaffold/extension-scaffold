@@ -188,7 +188,7 @@ but it should list the panel IDs that will be needed by *applications*.
 These IDs are then used by `es-home/scripts/resolve-applications.js` to compute
 which extensions are needed by an *application*.
 
-Below is a possible example for the vite example:
+Below is a possible example:
 
 ```json
 {
