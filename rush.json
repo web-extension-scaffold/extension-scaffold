@@ -412,8 +412,8 @@
       "projectFolder": "es-extension-examples/ext-example-rollup"
     },
     {
-      "packageName": "@moesol/ext-example-snowpack",
-      "projectFolder": "es-extension-examples/ext-example-snowpack"
+      "packageName": "@moesol/ext-example-basic",
+      "projectFolder": "es-extension-examples/ext-example-basic"
     },
     {
       "packageName": "@moesol/ext-example-svelte",

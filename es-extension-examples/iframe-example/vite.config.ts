@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import dotenv from 'dotenv';
+dotenv.config();
 
 // https://vitejs.dev/config/
 export default defineConfig({

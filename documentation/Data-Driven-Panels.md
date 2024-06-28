@@ -75,14 +75,14 @@ Below is an example for `example.json`
       ]
     }
   ],
-  "header": ["ext.snowpack.header"],
-  "footer": ["ext.snowpack.footer"],
-  "left": ["ext.snowpack.left"],
-  "center": ["ext.example.snowpack"],
+  "header": ["ext.basic.header"],
+  "footer": ["ext.basic.footer"],
+  "left": ["ext.basic.left"],
+  "center": ["ext.example.basic"],
   "right": ["ext.example.rollup", "ext.example.webpack"],
-  "top-bar": ["ext.snowpack.ribbon"],
-  "bottom-bar": ["ext.snowpack.bottom", "ext.example.lit-element"],
-  "extensions": ["/ui/ext-example-snowpack/dist/ext-react-snowpack.js"],
+  "top-bar": ["ext.basic.ribbon"],
+  "bottom-bar": ["ext.basic.bottom", "ext.example.lit-element"],
+  "extensions": ["/ui/ext-example-basic/dist/ext-react-basic.js"],
   "iframes": [
     {
       "id": "es.example.iframe",
@@ -128,7 +128,7 @@ Example:
 
 ```json
   "center": [
-      "ext.example.snowpack"
+      "ext.example.basic"
   ],
 ```
 
@@ -163,7 +163,7 @@ Example:
 
 ```json
     "extensions": [
-        "/ui/ext-example-snowpack/dist/ext-react-snowpack.js"
+        "/ui/ext-example-basic/dist/ext-react-basic.js"
     ],
 ```
 
@@ -185,31 +185,31 @@ but it should list the panel IDs that will be needed by *applications*.
 These IDs are then used by `es-home/scripts/resolve-applications.js` to compute
 which extensions are needed by an *application*.
 
-Below is a possible example for the ext-example-snowpack:
+Below is a possible example for the ext-example-basic:
 
 ```json
 {
-    "url": "http://localhost:9091/dist/ext-react-snowpack.js",
+    "url": "http://localhost:9091/dist/ext-react-basic.js",
     "provides": [
         {
             "title": "Example Header",
-            "id": "ext.snowpack.header"
+            "id": "ext.basic.header"
         },
         {
             "title": "Example Footer",
-            "id": "ext.snowpack.footer"
+            "id": "ext.basic.footer"
         },
         {
             "title": "Example Ribbon",
-            "id": "ext.snowpack.ribbon"
+            "id": "ext.basic.ribbon"
         },
         {
             "title": "Time Slider",
-            "id": "ext.snowpack.bottom"
+            "id": "ext.basic.bottom"
         },
         {
-            "title": "Snowpack Left",
-            "id": "ext.snowpack.left"
+            "title": "Basic Left",
+            "id": "ext.basic.left"
         }
     ]
 }
@@ -280,33 +280,33 @@ Finally, these files are combined to produce `public/xxx.json`:
     }
   ],
   "header": [
-    "ext.snowpack.header"
+    "ext.basic.header"
   ],
   "footer": [
-    "ext.snowpack.footer"
+    "ext.basic.footer"
   ],
   "left": [
-    "ext.snowpack.left"
+    "ext.basic.left"
   ],
   "right": [
     "ext.example.rollup",
     "ext.example.webpack"
   ],
   "top-bar": [
-    "ext.snowpack.ribbon"
+    "ext.basic.ribbon"
   ],
   "bottom-bar": [
-    "ext.snowpack.bottom",
+    "ext.basic.bottom",
     "ext.example.lit-element"
   ],
   "extensions": [
-    "/ui/ext-example-snowpack/dist/ext-react-snowpack.js",
+    "/ui/ext-example-basic/dist/ext-react-basic.js",
     "/es/common/dist/theme-extension.js",
     "/es/ui/dist/extensions/console-extension.js",
     "/es/ui/dist/extensions/network-extension.js",
     "/es/common/dist/debug-metrics.js",
     "/es/ui/dist/extensions/help-about-extension.js",
-    "http://localhost:9091/dist/ext-react-snowpack.js",
+    "http://localhost:9091/dist/ext-react-basic.js",
     "http://localhost:9092/ext-react-rollup.js",
     "http://localhost:9093/ext-react-webpack.js",
     "http://localhost:9094/dist/ext-lit-element.js"

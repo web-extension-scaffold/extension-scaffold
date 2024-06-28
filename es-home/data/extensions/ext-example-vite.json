@@ -1,5 +1,5 @@
 {
-    "url": "/ext-example-vite/build/ext-react-vite.js",
+    "url": "/ext-example-vite/dist/ext-react-vite.js",
     "provides": [
         {
             "title": "Vite Example",

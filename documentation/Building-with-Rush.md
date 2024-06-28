@@ -66,3 +66,16 @@ you can locally build just `es-runtime` if you like using:
 `cd es-runtime; npm run build`
 
 > Node: `rush build` is preferred as it makes sure everything builds.
+
+## Troubleshooting
+
+If you run `rush update` and get the following error:
+
+`You are not permitted to execute this command. Contact the systems administrator for further details.`
+
+You have rush installed from apt as well and need to uninstall before re-installing globally. 
+
+```
+$ sudo apt purge rush
+$ npm install -g @microsoft/rush
+```

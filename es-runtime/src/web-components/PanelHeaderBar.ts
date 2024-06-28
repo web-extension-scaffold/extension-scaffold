@@ -205,4 +205,6 @@ export class PanelHeaderBar extends HTMLElement {
         })
     }
 }
-window.customElements.define('es-panel-header-bar', PanelHeaderBar)
+if(!window.customElements.get('es-panel-header-bar')) {
+    window.customElements.define('es-panel-header-bar', PanelHeaderBar)
+}

@@ -7,7 +7,7 @@ are wrapped in a shadow DOM so that each extension does not
 have to worry about the CSS of other extensions interacting
 with its components.
 
-This extension uses `HtmlElements` as the component library and `snowpack` as its bundler.
+This extension uses `HtmlElements` as the component library and `vite` as its bundler.
 
 ## Available Scripts
 

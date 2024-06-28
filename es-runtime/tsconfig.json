@@ -3,7 +3,6 @@
   "compilerOptions": {
     "module": "ES2020",
     "target": "ES2016",
-    "declaration": true,
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
@@ -11,7 +10,10 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
-    "skipLibCheck": true,
+    "skipLibCheck": false,
+    "declaration": true,
+    "isolatedModules": false,
+    "removeComments": false,
     "outDir": "build"
   }
 }

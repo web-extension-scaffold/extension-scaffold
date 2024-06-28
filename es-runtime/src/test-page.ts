@@ -15,7 +15,7 @@ async function loadExtensions() {
     center: { activeId: null, size: '', isShown: false, isExpanded: false }
   }
 
-  const urls = ['http://localhost:9091/dist/ext-react-snowpack.js',
+  const urls = ['http://localhost:9091/dist/ext-react-basic.js',
     'http://localhost:9092/ext-react-rollup.js',
     'http://localhost:5000/build/ext-svelte-rollup.js',
     'http://localhost:9093/ext-react-webpack.js',
@@ -32,8 +32,4 @@ extensionScaffold.events.on('grid-changed', (gs) => { console.log('Pane!', gs) }
 extensionScaffold.events.on('ext-shown-changed', (gs) => { console.log('ExtChanged!', gs) })
 
 
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://snowpack.dev/concepts/hot-module-replacement
-if (import.meta.hot) {
-  import.meta.hot.accept();
-}
+
