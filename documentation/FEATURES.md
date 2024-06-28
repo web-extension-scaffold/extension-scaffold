@@ -101,7 +101,7 @@ function claimRibbonWith(scaffold: ExtensionScaffoldApi, id: string, node: React
 
 * `Show Code` toggle code for Settings
 
-* `Toggle Vite Left` toggle left panel from vite
+* `Toggle Basic Left` toggle left panel from vite
 
 * `Option One, Two, Three` show radial buttons
 

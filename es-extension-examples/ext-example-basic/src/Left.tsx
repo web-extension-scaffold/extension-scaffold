@@ -50,7 +50,7 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
     }
     function handleIframeModeless() {
         es.chrome.panels.addPanel({
-            id: 'vite.iframe.modeless',
+            id: 'basic.iframe.modeless',
             location: 'modeless',
             iframeSource: '/foo/bar',
             hideButton: true,
@@ -59,7 +59,7 @@ export const Left: React.FC<{ es: ExtensionScaffoldApi }> = ({ es }) => {
                 height: '40em'
             }
         }).catch(() => {
-            es.chrome.panels.showPanel('vite.iframe.modeless')
+            es.chrome.panels.showPanel('basic.iframe.modeless')
         })
     }
 

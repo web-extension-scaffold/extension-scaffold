@@ -1,4 +1,4 @@
-# Example Vite Extension
+# Example Extension
 
 This is an example of an extension.
 Extensions are where the primary functionality should be hosted.

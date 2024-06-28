@@ -12,7 +12,7 @@ export const RibbonCheckboxCode = () => {
       <div style={{ display: 'flex', flexDirection: 'column'}}>
         <label><input type="checkbox"></input>Show Something</label>
         <label><input type="checkbox"></input>Show Something Else</label>
-        <es-ribbon-button onClick={toggleBasicLeft}><div>Show Vite Left</div></es-ribbon-button>
+        <es-ribbon-button onClick={toggleBasicLeft}><div>Show Basic Left</div></es-ribbon-button>
       </div>
     </es-ribbon-section>
   )

@@ -10,7 +10,7 @@ export const MyModeless: React.FC<{
     esId: string
 }> = ({ es, esId }) => {
     function handleClick() {
-        console.log('vite clicked')
+        console.log('basic clicked')
     }
     function handleMaximize() {
         es.chrome.panels.maximizePanel(esId)

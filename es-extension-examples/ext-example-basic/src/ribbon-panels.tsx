@@ -105,7 +105,7 @@ export function doClaimRibbon(scaffold: ExtensionScaffoldApi) {
       <div style={{ display: 'flex', flexDirection: 'column'}}>
         <label><input type="checkbox"></input>Show Something</label>
         <label><input type="checkbox"></input>Show Something Else</label>
-        <es-ribbon-button onClick={toggleBasicLeft}><div>Toggle Vite Left</div></es-ribbon-button>
+        <es-ribbon-button onClick={toggleBasicLeft}><div>Toggle Basic Left</div></es-ribbon-button>
       </div>
     </es-ribbon-section>
   )
