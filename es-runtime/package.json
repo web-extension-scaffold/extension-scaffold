@@ -1,9 +1,7 @@
 {
   "name": "@moesol/es-runtime",
   "version": "2.21.0-SNAPSHOT.0",
-  "type": "module",
-  "module": ".",
-  "main": ".",
+  "module": "./build/es-api.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/MoebiusSolutions/extension-scaffold.git"
@@ -11,17 +9,16 @@
   "author": "Moebius Solutions",
   "license": "BlueOak-1.0.0",
   "scripts": {
-    "build": "tsc -p tsconfig.json && npm run cp:css && npm run cp:material && tsc",
+    "build": "tsc -p tsconfig.json && npm run cp:css && npm run cp:material",
     "cp:css": "copyfiles -u 1 src/*.css build",
     "cp:material": "copyfiles -u 1 node_modules/@material/elevation/dist/mdc.elevation.css build",
-    "check-types": "tsc --noEmit",
     "prepack": "npm run build",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
     "container": "npm run maybe-install",
     "upgrade-all": "./scripts/local-upgrade-all.sh "
   },
   "files": [
-    "src"
+    "build"
   ],
   "dependencies": {
     "events": "^3.3.0",
