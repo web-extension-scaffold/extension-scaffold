@@ -1,37 +1,17 @@
 import reactRefresh from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import fs from "fs";
-import path from "path";
 import dotenv from 'dotenv';
 dotenv.config();
 
 const urlPath = process.env.URLPATH || ''
 
-function listTsFiles(options) {
-    const { srcDir, ignoredPaths = [], ignoreSubDirs = false } = options;
-    let entries = {};
-
-    function exploreDirectory(dir) {
-        const files = fs.readdirSync(dir, { withFileTypes: true });
-        files.forEach(dirent => {
-            const fullPath = path.join(dir, dirent.name);
-            if (dirent.isDirectory()) {
-                // Check if ignoring all subdirectories or specific directories
-                if (!ignoreSubDirs && !ignoredPaths.includes(dirent.name)) {
-                    exploreDirectory(fullPath);
-                }
-            } else if (dirent.name.endsWith('.ts')) {
-                const entryKey = fullPath.replace(new RegExp(`^${path.resolve(srcDir)}\/|\.ts$`, 'g'), '').replace(/\//g, '_');
-                entries[entryKey] = fullPath;
-            }
-        });
-    }
-
-    exploreDirectory(srcDir);
-    return entries;
-}
-
 export default defineConfig({
+  /* when in lib mode, must define process.env */
+  define: {
+    'process.env': JSON.stringify({
+      NODE_ENV: process.env.NODE_ENV,
+    })
+  },
   base: urlPath,
   root: '.',
   plugins: [
@@ -44,37 +24,31 @@ export default defineConfig({
     base: '/',
   },
   build: {
+    /* "Failed to load extension" error if "minify: true"  */
     minify: false,
     base: urlPath,
     outDir: "dist",
-      lib: {
+    /* lib.entry config necessary to prevent "Failed to load extension Error" */
+    lib: {
       name: "es-home",
-      entry: listTsFiles({
-          srcDir: "./src",
-          ignoreSubDirs: false
-      }),
+      entry: [
+          './src/index.ts',
+          './src/bcst-bus.ts',
+          './src/extensions/console-extension.ts',
+          './src/extensions/help-about-extension.ts',
+          './src/extensions/network-extension.ts',
+      ],
       formats: ['es']
     },
     rollupOptions: {
-      preserveEntrySignatures: true,
-      external: (id) => id.startsWith('src') && (id.endsWith(".js") || id.endsWith(".ts") || id.endsWith(".css")),
       output: {
-          entryFileNames: (chunkInfo) => {
-          // extract the path from `src/` onwards
+        format: 'es',
+        /* preserveEntrySignatures: true => rollup preserves the exact structure of exports in the entry point modules in the output bundle */
+        preserveEntrySignatures: true,
+        /* entryFileNames function prevents error "Failed to fetch dynamically imported module"  */
+        entryFileNames: (chunkInfo) => {
           const pathFromSrc = chunkInfo.facadeModuleId.split('/src/')[1];
-          if (pathFromSrc) {
-            // check if the file is a typeScript file and replace '.ts' with '.js'
-            if (pathFromSrc.endsWith('.ts')) {
-              return `${pathFromSrc.replace(/\.ts$/, '.js')}`;
-            }
-            // for CSS files, just use the same name
-            else if (pathFromSrc.endsWith('.css')) {
-              return pathFromSrc;
-            }
-          } else {
-            // fallback filename pattern
-            return `[name].js`;
-          }
+          return pathFromSrc ? `${pathFromSrc.replace(/\.ts$/, '.js')}`: `[name].js`;
         },
         chunkFileNames: `[name].js`,
         assetFileNames: `[name].[ext]`
