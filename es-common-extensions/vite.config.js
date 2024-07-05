@@ -3,6 +3,14 @@ import { defineConfig } from 'vite';
 import dotenv from 'dotenv';
 dotenv.config();
 
+// Check for the existence of the old environment variable
+if (process.env.ES_SECURITY_URL_development || process.env.ES_SECURITY_URL_production) {
+  throw new Error(`
+    The environment variable 'ES_SECURITY_URL' has been deprecated.
+    Please use 'VITE_ES_SECURITY_URL' instead.
+  `);
+}
+
 const urlPath = process.env.URLPATH || ''
 
 export default defineConfig({
