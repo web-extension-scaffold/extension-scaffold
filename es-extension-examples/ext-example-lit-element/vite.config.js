@@ -1,23 +1,22 @@
 import reactRefresh from '@vitejs/plugin-react';
 import babel from 'vite-plugin-babel';
 import { defineConfig } from 'vite';
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import dotenv from 'dotenv';
 dotenv.config();
 
 const urlPath = process.env.URLPATH || ''
 
 export default defineConfig({
-  /* when in lib mode, must define process.env */
   define: {
-    'process.env': JSON.stringify({
-      NODE_ENV: process.env.NODE_ENV,
-    })
+    'process.env': JSON.stringify(process.env)
   },
   base: urlPath,
   root: '.',
   plugins: [
     reactRefresh(),
     babel(),
+    nodePolyfills()
   ],
   server: {
     port: 9094,
