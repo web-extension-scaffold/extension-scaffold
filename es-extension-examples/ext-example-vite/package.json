@@ -12,7 +12,8 @@
         "build": "vite build",
         "check-types": "tsc --noEmit",
         "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-        "container": "npm run maybe-install && vite dev"
+        "container": "npm run maybe-install && vite dev",
+        "container-preview": "npm run maybe-install && vite preview"
     },
     "devDependencies": {
         "@moesol/es-runtime": "workspace:*",

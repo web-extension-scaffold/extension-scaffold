@@ -9,7 +9,8 @@
         "start": "DO_SERVE=true rollup --config --watch",
         "build": "rollup --config",
         "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-        "container": "npm run maybe-install && DO_SERVE=true rollup --config --watch"
+        "container": "npm run maybe-install && DO_SERVE=true rollup --config --watch",
+        "container-preview": "npm run container"
     },
     "devDependencies": {
         "@moesol/es-runtime": "workspace:*",

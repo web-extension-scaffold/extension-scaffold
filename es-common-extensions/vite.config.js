@@ -15,6 +15,9 @@ if (process.env.ES_SECURITY_URL_development || process.env.ES_SECURITY_URL_produ
 const urlPath = process.env.URLPATH || ''
 
 export default defineConfig({
+  preview: {
+    port: 8082
+  },
   define: {
     'process.env': JSON.stringify(process.env)
   },
@@ -25,7 +28,7 @@ export default defineConfig({
     nodePolyfills()
   ],
   server: {
-    port: 8080,
+    port: 8082,
     strictPort: true,
     host: '0.0.0.0',
     base: '/',

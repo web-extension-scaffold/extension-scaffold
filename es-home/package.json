@@ -18,6 +18,7 @@
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
     "container": "npm run maybe-install && npm run resolve-applications && vite dev",
+    "container-preview": "npm run maybe-install && npm run resolve-applications && vite preview",
     "resolve-applications": "node ./scripts/resolve-applications.js",
     "git-describe": "node scripts/git-describe.js > public/version.json",
     "war": "npm run build && gulp war"

@@ -16,11 +16,11 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     base: '/',
-    port: 8080,
+    port: 9095,
     strictPort: true,
   },
   preview: {
-    port: 8080,
+    port: 9095,
   },
   build: {
     sourcemap: true,

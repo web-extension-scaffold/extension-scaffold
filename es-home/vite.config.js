@@ -7,6 +7,9 @@ dotenv.config();
 const urlPath = process.env.URLPATH || ''
 
 export default defineConfig({
+  preview: {
+    port: 8080
+  },
   define: {
     'process.env': JSON.stringify(process.env)
   },

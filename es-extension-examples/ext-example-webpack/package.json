@@ -74,7 +74,8 @@
     "test": "node scripts/test.js",
     "serve": "serve --listen 9093 --cors build",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-    "container": "npm run maybe-install && npm run build && npm run serve"
+    "container": "npm run maybe-install && npm run build && npm run serve",
+    "container-preview": "npm run container"
   },
   "eslintConfig": {
     "extends": [

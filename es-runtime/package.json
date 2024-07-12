@@ -15,6 +15,7 @@
     "prepack": "npm run build",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
     "container": "npm run maybe-install",
+    "container-preview": "npm run container",
     "upgrade-all": "./scripts/local-upgrade-all.sh "
   },
   "files": [
