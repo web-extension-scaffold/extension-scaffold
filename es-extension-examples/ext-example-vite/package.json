@@ -9,11 +9,11 @@
     },
     "scripts": {
         "start": "vite dev",
-        "build": "vite build",
+        "build": "vite build && mkdir -p dist/dist && cp -rf dist/*.js dist/dist/",
         "check-types": "tsc --noEmit",
         "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
         "container": "npm run maybe-install && vite dev",
-        "container-preview": "npm run maybe-install && vite preview"
+        "container-preview": "npm run maybe-install && npm run build && vite preview --outDir ."
     },
     "devDependencies": {
         "@moesol/es-runtime": "workspace:*",

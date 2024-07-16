@@ -9,7 +9,7 @@
     "lint": "prettier --check \"src/**/*.{ts,js}\"",
     "maybe-install": "[ -d node_modules ] || echo run rush update",
     "container": "vite dev",
-    "container-preview": "vite preview"
+    "container-preview": "npm run build && vite preview"
   },
   "dependencies": {
     "@moesol/inter-widget-communication": "^2.8.0-SNAPSHOT.0",

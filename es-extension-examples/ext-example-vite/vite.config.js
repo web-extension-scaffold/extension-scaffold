@@ -23,7 +23,6 @@ export default defineConfig({
     port: 9098,
     strictPort: true,
     host: '0.0.0.0',
-    base: '/',
   },
   build: {
     outDir: 'dist',
@@ -36,7 +35,6 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        format: 'es',
         /* preserveEntrySignatures: true => rollup preserves the exact structure of exports in the entry point modules in the output bundle */
         preserveEntrySignatures: true,
         entryFileNames: `[name].js`,

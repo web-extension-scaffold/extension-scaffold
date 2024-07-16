@@ -1,10 +1,32 @@
 import reactRefresh from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import dotenv from 'dotenv';
 dotenv.config();
+const fs = require('fs');
+const path = require('path');
 
-const urlPath = process.env.URLPATH || ''
+const EXT_PATH = "./src/extensions";
+
+const urlPath = process.env.URLPATH || '';
+
+const getAllExtensions = (dir) => {
+  const files = fs.readdirSync(dir);
+  let fileList = {};
+
+  files.forEach(file => {
+    const fullPath = path.join(dir, file);
+    const relativePath = path.relative('./src', fullPath).replace(/\\/g, '/'); // for windows compatibility
+    if (fs.statSync(fullPath).isDirectory()) {
+      fileList = { ...fileList, ...getAllExtensions(fullPath) };
+    } else {
+      const key = relativePath.replace(path.extname(file), '');
+      fileList[key] = fullPath;
+    }
+  });
+
+  return fileList;
+}
 
 export default defineConfig({
   preview: {
@@ -23,7 +45,6 @@ export default defineConfig({
     port: 8080,
     strictPort: true,
     host: '0.0.0.0',
-    base: '/',
   },
   build: {
     /* "Failed to load extension" error if "minify: true"  */
@@ -43,15 +64,16 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
+      input: {
+        index: 'index.html',
+        'bcst-bus': './src/bcst-bus.ts',
+        ...getAllExtensions(EXT_PATH)
+      },
       output: {
         format: 'es',
         /* preserveEntrySignatures: true => rollup preserves the exact structure of exports in the entry point modules in the output bundle */
         preserveEntrySignatures: true,
-        /* entryFileNames function prevents error "Failed to fetch dynamically imported module"  */
-        entryFileNames: (chunkInfo) => {
-          const pathFromSrc = chunkInfo.facadeModuleId.split('/src/')[1];
-          return pathFromSrc ? `${pathFromSrc.replace(/\.ts$/, '.js')}`: `[name].js`;
-        },
+        entryFileNames: `[name].js`,
         chunkFileNames: `[name].js`,
         assetFileNames: `[name].[ext]`
       }

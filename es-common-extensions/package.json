@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "start": "vite dev",
-    "build": "vite build",
+    "build": "vite build && mkdir -p dist/dist && cp -rf dist/*.js dist/dist/",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "check-types": "tsc --noEmit",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
     "container": "npm run maybe-install && vite dev",
-    "container-preview": "npm run maybe-install && vite preview"
+    "container-preview": "npm run maybe-install && npm run build && vite preview"
   },
   "dependencies": {
     "@moesol/inter-widget-communication": "^2.8.0-SNAPSHOT.0",
