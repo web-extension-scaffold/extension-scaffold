@@ -3,7 +3,7 @@
   "version": "2.12.0-SNAPSHOT",
   "scripts": {
     "start": "vite dev",
-    "build": "vite build",
+    "build": "vite build && mkdir -p temp && cp -rf dist/* temp/ && mv temp dist/dist",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
     "format": "prettier --write \"src/**/*.{ts,js}\"",
     "lint": "prettier --check \"src/**/*.{ts,js}\"",

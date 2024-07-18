@@ -9,7 +9,7 @@
   "license": "BlueOak-1.0.0",
   "scripts": {
     "start": "vite dev",
-    "build": "npm run resolve-applications && npm run git-describe && vite build && npm run cp-extensions",
+    "build": "npm run resolve-applications && npm run git-describe && vite build && mkdir -p temp && cp -rf dist/* temp/ && mv temp dist/dist",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "check-types": "tsc --noEmit",
@@ -20,7 +20,6 @@
     "container": "npm run maybe-install && npm run resolve-applications && vite dev",
     "container-preview": "npm run maybe-install && npm run resolve-applications && npm run build && vite preview",
     "resolve-applications": "node ./scripts/resolve-applications.js",
-    "cp-extensions": "node ./scripts/cp-extensions.js",
     "git-describe": "node scripts/git-describe.js > public/version.json",
     "war": "npm run build && gulp war"
   },

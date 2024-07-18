@@ -3,14 +3,14 @@
   "version": "2.12.0-SNAPSHOT",
   "scripts": {
     "start": "vite dev",
-    "build": "vite build",
+    "build": "vite build && mkdir -p temp && cp -rf dist/* temp/ && mv temp dist/dist",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\"",
     "check-types": "tsc --noEmit",
     "lint": "prettier --check \"src/**/*.ts\"",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
     "container": "npm run maybe-install && npm start",
-     "container-preview": "npm run maybe-install && npm run build && vite preview --outDir ."
+    "container-preview": "npm run maybe-install && npm run build && vite preview"
   },
   "dependencies": {
     "lit-element": "^2.4.0",

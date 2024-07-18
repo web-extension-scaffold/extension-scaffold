@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "vite dev",
-    "build": "vite build && mkdir -p dist/dist && cp -rf dist/*.js dist/dist/",
+    "build": "vite build && mkdir -p temp && cp -rf dist/* temp/ && mv temp dist/dist",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "check-types": "tsc --noEmit",
