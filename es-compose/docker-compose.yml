@@ -27,7 +27,7 @@ services:
     environment:
       - DO_INSTALL
       - URLPATH=/es/ui
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   es-runtime:
     image: ${NODE_TAG}
@@ -42,7 +42,7 @@ services:
       - "127.0.0.1:8081:8081"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   es-common-extensions:
     image: ${NODE_TAG}
@@ -58,7 +58,7 @@ services:
     environment:
       - DO_INSTALL
       - URLPATH=/es/common
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-rollup:
     image: ${NODE_TAG}
@@ -73,7 +73,7 @@ services:
       - "127.0.0.1:9092:9092"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-vite:
     image: ${NODE_TAG}
@@ -88,7 +88,7 @@ services:
       - "127.0.0.1:9098:9098"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-basic:
     image: ${NODE_TAG}
@@ -103,7 +103,7 @@ services:
       - "127.0.0.1:9091:9091"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   iframe-example:
     image: ${NODE_TAG}
@@ -118,7 +118,7 @@ services:
       - "127.0.0.1:9095:9095"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-svelte:
     image: ${NODE_TAG}
@@ -133,7 +133,7 @@ services:
       - "127.0.0.1:5000:5000"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-webpack:
     image: ${NODE_TAG}
@@ -148,7 +148,7 @@ services:
       - "127.0.0.1:9093:9093"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-lit-element:
     image: ${NODE_TAG}
@@ -163,7 +163,7 @@ services:
       - "127.0.0.1:9094:9094"
     environment:
       - DO_INSTALL
-    command: sh -c "npm run container${PREVIEW_MODE:+-preview}"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   # The nodejs service is just for development
   nodejs:
