@@ -5,12 +5,12 @@ In order to test how vite will work in production, run in 'vite preview' mode by
 
 Running in Preview Mode
 ```bash
-$ PREVIEW_MODE=true docker-compose up -d
+$ PREVIEW_MODE=true docker-compose up --build
 ```
 
 Running in Dev Mode
 ```bash
-$ docker-compose up -d
+$ docker-compose up --build
 ```
 
 ### Explanation of package.json scripts
