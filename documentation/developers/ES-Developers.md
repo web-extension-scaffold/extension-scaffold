@@ -26,5 +26,5 @@ The main single page application for ES.
 
 ## `es-extension-examples`
 
-Contains sub-directories with extensions written with snowpack, rollup, webpack, etc.
+Contains sub-directories with extensions written with vite, rollup, webpack, etc.
 The examples show how to use different frameworks/bundlers to create an extension.

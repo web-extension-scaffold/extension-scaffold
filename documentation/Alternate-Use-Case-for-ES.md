@@ -12,7 +12,7 @@ npm install -D @moesol/es-runtime
 ```
 
 The `es-application-examples/es-demo` folder contains an example "hosting" SPA 
-that is based the `snowpack` bundler and the `typescript` language.
+that is based on the `typescript` language.
 > Note: To simplify information assurance scans `es-demo` was removed from the `develop` and `release` branches.
 > However, you can view `es-demo` by checking out the tag `v2.4.0`.
 > Or you can review the source code for `es-home`.
@@ -32,7 +32,7 @@ import { extensionScaffold } from '@moesol/es-runtime/build/es-api'
 async function loadExtensions() {
   extensionScaffold.boot(document.getElementById('demo-grid-container'))
   
-  await extensionScaffold.loadExtension('http://localhost:9091/dist/ext-react-snowpack.js')
+  await extensionScaffold.loadExtension('http://localhost:9091/dist/ext-react-basic.js')
   await extensionScaffold.loadExtension('http://localhost:9092/ext-react-rollup.js')
   await extensionScaffold.loadExtension('http://localhost:5000/build/ext-svelte-rollup.js')
   await extensionScaffold.loadExtension('http://localhost:9093/ext-react-webpack.js')

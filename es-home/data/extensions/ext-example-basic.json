@@ -1,0 +1,25 @@
+{
+    "url": "/ext-example-basic/dist/ext-react-basic.js",
+    "provides": [
+        {
+            "title": "Example Header",
+            "id": "ext.basic.header"
+        },
+        {
+            "title": "Example Footer",
+            "id": "ext.basic.footer"
+        },
+        {
+            "title": "Example Ribbon",
+            "id": "ext.basic.ribbon"
+        },
+        {
+            "title": "Time Slider",
+            "id": "ext.basic.bottom"
+        },
+        {
+            "title": "Basic Left",
+            "id": "ext.basic.left"
+        }
+    ]
+}

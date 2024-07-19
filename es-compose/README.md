@@ -24,6 +24,8 @@ Run `rush update`.
 $ docker-compose up -d
 ```
 
+note: run with 'docker-compose up --build' if recently updated docker build context
+
 Finally, browse to `http://localhost/es/ui/`. 
 Currently, the compose environment uses many ports: `80`, `8080`, `9091`, `9092`, `9093`, and `9094`. 
 It also reserves `8081`, `8082`, and `3000` for the `nodejs` development container, which is not used.

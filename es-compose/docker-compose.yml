@@ -2,8 +2,9 @@ version: '3'
 services:
   proxy:
     build: proxy
+    container_name: proxy
     volumes: 
-    - "./proxy/etc/httpd/conf.d:/etc/httpd/conf.d"
+    - "./proxy/etc/httpd/conf.d:/usr/local/apache2/conf/conf.d"
     expose:
     - 80
     - 443
@@ -14,19 +15,23 @@ services:
 
   es-home:
     image: ${NODE_TAG}
+    container_name: es-home
     user: "node"
     working_dir: "/home/extension-scaffold/es-home"
     volumes: 
       - "/etc/ssl/certs:/etc/ssl/certs"
       - "../:/home/extension-scaffold"
       - "./home-node:/home/node"
+    ports:
+      - "127.0.0.1:8080:8080"
     environment:
       - DO_INSTALL
       - URLPATH=/es/ui
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   es-runtime:
     image: ${NODE_TAG}
+    container_name: es-runtime
     user: "node"
     working_dir: "/home/extension-scaffold/es-runtime"
     volumes: 
@@ -37,23 +42,27 @@ services:
       - "127.0.0.1:8081:8081"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   es-common-extensions:
     image: ${NODE_TAG}
+    container_name: es-common-extensions
     user: "node"
     working_dir: "/home/extension-scaffold/es-common-extensions"
     volumes: 
       - "/etc/ssl/certs:/etc/ssl/certs"
       - "../:/home/extension-scaffold"
       - "./home-node:/home/node"
+    ports:
+      - "127.0.0.1:8082:8082"
     environment:
       - DO_INSTALL
       - URLPATH=/es/common
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-rollup:
     image: ${NODE_TAG}
+    container_name: ext-example-rollup
     user: "node"
     working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-rollup"
     volumes: 
@@ -64,10 +73,11 @@ services:
       - "127.0.0.1:9092:9092"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-vite:
     image: ${NODE_TAG}
+    container_name: ext-example-vite
     user: "node"
     working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-vite"
     volumes:
@@ -78,12 +88,13 @@ services:
       - "127.0.0.1:9098:9098"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
-  ext-example-snowpack:
+  ext-example-basic:
     image: ${NODE_TAG}
+    container_name: ext-example-basic
     user: "node"
-    working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-snowpack"
+    working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-basic"
     volumes: 
       - "/etc/ssl/certs:/etc/ssl/certs"
       - "../:/home/extension-scaffold"
@@ -92,10 +103,11 @@ services:
       - "127.0.0.1:9091:9091"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   iframe-example:
     image: ${NODE_TAG}
+    container_name: iframe-example
     user: "node"
     working_dir: "/home/extension-scaffold/es-extension-examples/iframe-example"
     volumes: 
@@ -103,13 +115,14 @@ services:
       - "../:/home/extension-scaffold"
       - "./home-node:/home/node"
     ports: 
-      - "127.0.0.1:9095:8080"
+      - "127.0.0.1:9095:9095"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-svelte:
     image: ${NODE_TAG}
+    container_name: ext-example-svelte
     user: "node"
     working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-svelte"
     volumes: 
@@ -120,10 +133,11 @@ services:
       - "127.0.0.1:5000:5000"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-webpack:
     image: ${NODE_TAG}
+    container_name: ext-example-webpack
     user: "node"
     working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-webpack"
     volumes: 
@@ -134,10 +148,11 @@ services:
       - "127.0.0.1:9093:9093"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   ext-example-lit-element:
     image: ${NODE_TAG}
+    container_name: ext-example-lit-element
     user: "node"
     working_dir: "/home/extension-scaffold/es-extension-examples/ext-example-lit-element"
     volumes: 
@@ -148,7 +163,7 @@ services:
       - "127.0.0.1:9094:9094"
     environment:
       - DO_INSTALL
-    command: "npm run container"
+    command: sh -c "npm run container$${PREVIEW_MODE:+-preview}"
 
   # The nodejs service is just for development
   nodejs:

@@ -25,3 +25,35 @@ The panel layout is managed using a grid layout.
 ## Sequence Diagram for an Extension Adding Panel
 
 ![Extension Adding Panel](out/Extension-Adding-Panel/Extension-Adding-Panel.svg)
+
+## Building extensions for Vite
+
+All extensions used by a package (`theme-extension`, `ext-lit-element`, ect) need to be added to vite.config.js under 
+`build.lib.entry`, along with an `index.ts` file (which will export these extension):
+
+``` 
+// vite.config.js:
+build: {
+    lib: {
+        entry: ['./src/ext-lit-element.ts', './src/theme-extension.ts', './src/index.ts']
+    }
+}
+```
+
+```javascript
+// add to /src/index.ts
+import('./theme-extension')
+import('./ext-lit-element')
+```
+
+After this is done, run 'rush build' and ensure that the `ext-lit-element.js` now appears in your generated `dist` 
+or `build` folder. 
+
+Then, go to where the extension is registered in `es-home/data/extensions/<ext>.json` and look at the 'url' section. 
+Ensure the url matches the location where the extension file currently exists in the generated `dist` folder. 
+For example, here is the extension for 'network-extension.json': `"url": "/es/ui/dist/network-extension.js"`. This
+means that 'network-extension' must exist in the root of the 'dist' folder.
+(Note that the proxy (example.conf) dictates that '/es/ui' is redirected to 'es-home')
+
+Now restart application and ensure that the extension is loaded without 404 error in the network tab 
+

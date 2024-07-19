@@ -20,7 +20,7 @@
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "css-loader": "4.3.0",
-    "dotenv": "8.2.0",
+    "dotenv": "~16.4.5",
     "dotenv-expand": "5.1.0",
     "eslint": "^7.11.0",
     "eslint-config-react-app": "^6.0.0",
@@ -74,7 +74,8 @@
     "test": "node scripts/test.js",
     "serve": "serve --listen 9093 --cors build",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-    "container": "npm run maybe-install && npm run build && npm run serve"
+    "container": "npm run maybe-install && npm run build && npm run serve",
+    "container-preview": "npm run container"
   },
   "eslintConfig": {
     "extends": [

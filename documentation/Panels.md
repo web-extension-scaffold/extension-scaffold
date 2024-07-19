@@ -23,9 +23,9 @@ When `addPanel` is called with one of these locations
 a "dialog" window is centered on the screen to host the panel.
 The header of the dialog can be used to raise or move the dialog.
 The bottom resize icon (`resizeEnabled: true`) can be dragged to resize the dialog.
-* See [ext-react-snowpack.tsx](es-extension-examples/ext-example-snowpack/src/ext-react-snowpack.tsx#L109).
+* See [ext-react-basic.tsx](es-extension-examples/ext-example-basic/src/ext-react-basic.tsx#L109).
 
-The example in `es-extension-examples/ext-example-snowpack/src/Ribbon.tsx` shows how to create a floating ribbon bar. 
+The example in `es-extension-examples/ext-example-basic/src/Ribbon.tsx` shows how to create a floating ribbon bar. 
 When adding to the `portal` location, the child element can use 
 
 ```

@@ -9,10 +9,11 @@
     },
     "scripts": {
         "start": "vite dev",
-        "build": "vite build",
+        "build": "vite build && mkdir -p temp && cp -rf dist/* temp/ && mv temp dist/dist",
         "check-types": "tsc --noEmit",
         "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-        "container": "npm run maybe-install && vite dev"
+        "container": "npm run maybe-install && vite dev",
+        "container-preview": "npm run maybe-install && npm run build && vite preview"
     },
     "devDependencies": {
         "@moesol/es-runtime": "workspace:*",
@@ -26,6 +27,7 @@
         "rollup-plugin-typescript2": "^0.30.0",
         "tslib": "^2.2.0",
         "typescript": "~4.8.2",
-        "vite": "~5.2.9"
+        "vite": "~5.2.9",
+        "vite-plugin-node-polyfills": "~0.22.0"
     }
 }

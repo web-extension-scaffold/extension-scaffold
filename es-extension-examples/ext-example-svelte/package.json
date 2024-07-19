@@ -7,7 +7,8 @@
     "dev": "rollup -c -w",
     "start": "sirv public --host 0.0.0.0 --no-clear --cors",
     "maybe-install": "[ -d node_modules ] && [ -z $DO_INSTALL ] || npm install",
-    "container": "npm run maybe-install && npm run build && sirv public --host 0.0.0.0 --no-clear --cors"
+    "container": "npm run maybe-install && npm run build && sirv public --host 0.0.0.0 --no-clear --cors",
+    "container-preview": "npm run container"
   },
   "devDependencies": {
     "@moesol/es-runtime": "workspace:*",

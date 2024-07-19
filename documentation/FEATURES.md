@@ -101,7 +101,7 @@ function claimRibbonWith(scaffold: ExtensionScaffoldApi, id: string, node: React
 
 * `Show Code` toggle code for Settings
 
-* `Toggle Snowpack Left` toggle left panel from snowpack
+* `Toggle Basic Left` toggle left panel from vite
 
 * `Option One, Two, Three` show radial buttons
 
@@ -148,7 +148,7 @@ function claimRibbonWith(scaffold: ExtensionScaffoldApi, id: string, node: React
 
 * Close button
 
-### Snowpack
+### Vite
 
 * `Add Center` - adds a stacked center panel.
   * `Maximize Me` - maximizes the center panel
@@ -157,7 +157,7 @@ function claimRibbonWith(scaffold: ExtensionScaffoldApi, id: string, node: React
   * `Add Center` - stacks another center
     * `Add Another` - stacks another center - to show Third Center Panel
   * `Show Rollup`
-  * `Show Snowpack` - also check clicking when maximized
+  * `Show Vite` - also check clicking when maximized
 
 * `Pop Out`
 
