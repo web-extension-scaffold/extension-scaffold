@@ -25,6 +25,8 @@ export class BarController {
             if (this.divBar) {
                 this.render(this.divBar, panelOptions) // Must be first to set `active`
                 this.updatePanelHeader(panelOptions)
+            } else {
+                console.error('Unexpected failure in addPanel', err)
             }
         })
     }
