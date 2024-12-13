@@ -20,53 +20,47 @@ function updateHidden(size: number, dz: number,
     }
 }
 
+function availableWidth(panelDiv: HTMLElement) {
+    const el: HTMLDivElement | null = document.querySelector('.grid-panel.center')
+    const centerWidth = el?.offsetWidth ?? 100
+    return centerWidth + panelDiv.offsetWidth - 100
+}
+
+function availableHeight(panelDiv: HTMLElement) {
+    const el: HTMLDivElement | null = document.querySelector('.grid-panel.center')
+    const centerHeight = el?.offsetHeight ?? 100
+    return centerHeight + panelDiv.offsetHeight - 100
+}
+
 function applyLeft(rd: ResizeData, e: PointerEvent) {
-    const w = window.innerWidth
     const dx = e.pageX - rd.origPageX
     const width = rd.origWidth + dx
-    const newWidth = Math.min(Math.max(100, width), w / 2 - 100)
-    rd.panelDiv.style.setProperty('--size', `${newWidth}px`)
-    updateHidden(newWidth, dx, rd.panelDiv, rd.extensionDiv)
-    if (newWidth === w / 2 - 100) {
-        rd.panelDiv.classList.add('grid-expanded')
-    } else {
-        rd.panelDiv.classList.remove('grid-expanded')
-    }
+    const constrainedWidth = Math.min(Math.max(100, width), availableWidth(rd.panelDiv))
+    rd.panelDiv.style.setProperty('--size', `${constrainedWidth}px`)
+    updateHidden(constrainedWidth, dx, rd.panelDiv, rd.extensionDiv)
 }
 
 function applyRight(rd: ResizeData, e: PointerEvent) {
-    const w = window.innerWidth
     const dx = -1 * (e.pageX - rd.origPageX)
     const width = rd.origWidth + dx
-    const newWidth = Math.min(Math.max(100, width), w / 2 - 100)
-    rd.panelDiv.style.setProperty('--size', `${newWidth}px`)
-    updateHidden(newWidth, dx, rd.panelDiv, rd.extensionDiv)
-    if (newWidth === w / 2 - 100) {
-        rd.panelDiv.classList.add('grid-expanded')
-    } else {
-        rd.panelDiv.classList.remove('grid-expanded')
-    }
+    const constrainedWidth = Math.min(Math.max(100, width), availableWidth(rd.panelDiv))
+    rd.panelDiv.style.setProperty('--size', `${constrainedWidth}px`)
+    updateHidden(constrainedWidth, dx, rd.panelDiv, rd.extensionDiv)
 }
 
 function applyTop(rd: ResizeData, e: PointerEvent) {
     const h = window.innerHeight
     const dy = e.pageY - rd.origPageY
-    const newHeight = Math.min(Math.max(100, rd.origHeight + dy), h / 2)
+    const newHeight = Math.min(Math.max(100, rd.origHeight + dy), availableHeight(rd.panelDiv))
     rd.panelDiv.style.setProperty('--size', `${newHeight}px`)
     updateHidden(newHeight, dy, rd.panelDiv, rd.extensionDiv)
 }
 
 function applyBottom(rd: ResizeData, e: PointerEvent) {
-    const h = window.innerHeight
     const dy = -1 * (e.pageY - rd.origPageY)
-    const newHeight = Math.min(Math.max(100, rd.origHeight + dy), h / 2)
+    const newHeight = Math.min(Math.max(100, rd.origHeight + dy), availableHeight(rd.panelDiv))
     rd.panelDiv.style.setProperty('--size', `${newHeight}px`)
     updateHidden(newHeight, dy, rd.panelDiv, rd.extensionDiv)
-    if (newHeight === h / 2) {
-        rd.panelDiv.classList.add('grid-expanded')
-    } else {
-        rd.panelDiv.classList.remove('grid-expanded')
-    }
 }
 
 function doNothing() {
