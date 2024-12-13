@@ -120,6 +120,8 @@ code {
 .grid-panel.modal:not(.grid-maximized)    .drag.drag-for-modal    ~ .shadow-div,
 .grid-panel.modeless:not(.grid-maximized) .drag.drag-for-modeless ~ .shadow-div {
   resize: both;
+  max-width: calc(100vw - 10px);
+  max-height: calc(100vh - 26px);
 }
 .grid-expanded .drag.drag-for-top-bar,
 .grid-expanded .drag.drag-for-top,
