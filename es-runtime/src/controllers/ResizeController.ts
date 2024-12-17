@@ -132,10 +132,14 @@ export function beginResize(
 
     dragDiv.onpointermove = doResize
     dragDiv.setPointerCapture(e.pointerId)
+    dragDiv.style.pointerEvents = 'all'         // dragDiv needs all pointer events
+    document.body.style.pointerEvents = 'none'  // Prevent chromium iframes from stealing pointer events
 }
 
 export function endResize(dragDiv: HTMLDivElement, e: PointerEvent) {
     extensionScaffold.events.emit('grid-changed', getGridState())
     dragDiv.onpointermove = null
     dragDiv.releasePointerCapture(e.pointerId)
+    dragDiv.style.pointerEvents = ''
+    document.body.style.pointerEvents = ''
 }

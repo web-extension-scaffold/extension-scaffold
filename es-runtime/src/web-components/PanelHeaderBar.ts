@@ -86,10 +86,14 @@ export class PanelHeaderBar extends HTMLElement {
                 panelDiv.style.setProperty('--top', `${top}px`)
             }
             this.setPointerCapture(e.pointerId)
+            this.style.pointerEvents = 'all'            // `this` needs all pointer events
+            document.body.style.pointerEvents = 'none'  // Prevent chromium iframes from stealing pointer events
         }
         this.onpointerup = (e: PointerEvent) => {
             this.onpointermove = null
             this.releasePointerCapture(e.pointerId)
+            this.style.pointerEvents = ''
+            document.body.style.pointerEvents = ''
         }
     }
     raisePanel() {
