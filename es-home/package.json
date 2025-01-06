@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "@moesol/es-runtime": "workspace:*",
-    "@moesol/es-iframe-to-dev-ext": "workspace:*",
     "@moesol/inter-widget-communication": "^2.8.0-SNAPSHOT.0",
     "@optoolco/tonic": "^13.3.6",
     "events": "^3.3.0",
