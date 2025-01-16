@@ -81,7 +81,7 @@ code {
   top: 0px;
   bottom: 0px;
   right: 0px;
-  width: 4px;
+  width: 6px;
   cursor: ew-resize;
 }
 
@@ -91,7 +91,7 @@ code {
   top: 0px;
   bottom: 0px;
   left: 0px;
-  width: 4px;
+  width: 6px;
   cursor: ew-resize;
 }
 
@@ -120,6 +120,8 @@ code {
 .grid-panel.modal:not(.grid-maximized)    .drag.drag-for-modal    ~ .shadow-div,
 .grid-panel.modeless:not(.grid-maximized) .drag.drag-for-modeless ~ .shadow-div {
   resize: both;
+  max-width: calc(100vw - 10px);
+  max-height: calc(100vh - 26px);
 }
 .grid-expanded .drag.drag-for-top-bar,
 .grid-expanded .drag.drag-for-top,

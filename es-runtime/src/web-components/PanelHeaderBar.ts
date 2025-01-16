@@ -15,6 +15,24 @@ export class PanelHeaderBar extends HTMLElement {
         const rect = panelDiv.getBoundingClientRect()
         this.untranslate(panelDiv, rect)
     })
+    private _intersectionObserver = new IntersectionObserver((entries) => {
+        const panelDiv = this.parentElement
+        if (!panelDiv) {
+            return
+        }
+        entries.forEach(entry => {
+            if (entry.intersectionRatio === 0 && entry.rootBounds) {
+                if (entry.boundingClientRect.top > entry.rootBounds.bottom) {
+                    panelDiv.style.setProperty('--top', `0px`)
+                }
+                if (entry.boundingClientRect.left > entry.rootBounds.right) {
+                    panelDiv.style.setProperty('--left', `0px`)
+                }
+            }
+        })
+    }, {
+        threshold: [0.0, 1.0]
+    })
 
     constructor() {
         super()
@@ -28,6 +46,9 @@ export class PanelHeaderBar extends HTMLElement {
     connectedCallback() {
         this.render()
     }
+    disconnectedCallback() {
+        this._intersectionObserver.disconnect()
+    }
     private registerForDialogEvents() {
         const panelDiv = this.parentElement
         if (!panelDiv) {
@@ -36,6 +57,7 @@ export class PanelHeaderBar extends HTMLElement {
         }
 
         this._resizeObserver.observe(this)
+        this._intersectionObserver.observe(panelDiv)
 
         panelDiv.addEventListener('pointerdown', () =>{
             this.raisePanel()
@@ -44,13 +66,14 @@ export class PanelHeaderBar extends HTMLElement {
             if (e.button !== 0 || e.target != this) {
                 return
             }
+            const myRect = this.getBoundingClientRect()
             const rect = panelDiv.getBoundingClientRect()
             this.untranslate(panelDiv, rect)
 
             const startX = e.clientX
             const startY = e.clientY
             const maxRight = Math.max(0, window.innerWidth - rect.width)
-            const maxBottom = Math.max(0, window.innerHeight - rect.height)
+            const maxBottom = Math.max(0, window.innerHeight - myRect.height - 4)
 
             this.onpointermove = (e: PointerEvent) => {
                 const newX = rect.x + (e.clientX - startX)
@@ -63,10 +86,14 @@ export class PanelHeaderBar extends HTMLElement {
                 panelDiv.style.setProperty('--top', `${top}px`)
             }
             this.setPointerCapture(e.pointerId)
+            this.style.pointerEvents = 'all'            // `this` needs all pointer events
+            document.body.style.pointerEvents = 'none'  // Prevent chromium iframes from stealing pointer events
         }
         this.onpointerup = (e: PointerEvent) => {
             this.onpointermove = null
             this.releasePointerCapture(e.pointerId)
+            this.style.pointerEvents = ''
+            document.body.style.pointerEvents = ''
         }
     }
     raisePanel() {
@@ -101,8 +128,8 @@ export class PanelHeaderBar extends HTMLElement {
         }
         panelDiv.classList.add('moved')
         panelDiv.style.transform === 'translate(0px, 0px)'
-        panelDiv.style.setProperty('--left', `${rect.x}px`)
-        panelDiv.style.setProperty('--top', `${rect.y}px`)
+        panelDiv.style.setProperty('--left', `${Math.max(0, rect.x)}px`)
+        panelDiv.style.setProperty('--top', `${Math.max(0, rect.y)}px`)
     }
     private render() {
         if (!this.isConnected) {
