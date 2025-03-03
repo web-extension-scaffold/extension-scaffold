@@ -175,6 +175,12 @@ code {
   height: 16px;
 }
 
+.panel-header-bar span.title {
+  flex-grow: 1;
+  padding-left: 4px;
+  pointer-events: none;
+}
+
 .grid-panel.portal {
   grid-column: 3 / 4;
   grid-row: 4 / 6;
