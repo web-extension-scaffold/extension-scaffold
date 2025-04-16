@@ -22,7 +22,7 @@
 cafile=/etc/ssl/certs/ca-certificates.crt
 
 # publish to TRMC
-@gots:registry="https://artifacts.trmc.osd.mil/artifactory/api/npm/minerva-npm/"
-//artifacts.trmc.osd.mil/artifactory/api/npm/minerva-npm/:_password=${TRMC_NPM_CREDS_PSW}
-//artifacts.trmc.osd.mil/artifactory/api/npm/minerva-npm/:username=${TRMC_NPM_CREDS_USR}
-//artifacts.trmc.osd.mil/artifactory/api/npm/minerva-npm/:always-auth=true
+registry="https://artifacts.trmc.osd.mil:443/artifactory/minerva-npm"
+//https://artifacts.trmc.osd.mil:443/artifactory/minerva-npm:_password=${TRMC_NPM_CREDS_PSW}
+//https://artifacts.trmc.osd.mil:443/artifactory/minerva-npm:username=${TRMC_NPM_CREDS_USR}
+//https://artifacts.trmc.osd.mil:443/artifactory/minerva-npm:always-auth=true
