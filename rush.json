@@ -408,10 +408,6 @@
       "projectFolder": "es-extension-examples/ext-example-lit-element"
     },
     {
-      "packageName": "@moesol/extension-example-rollup",
-      "projectFolder": "es-extension-examples/ext-example-rollup"
-    },
-    {
       "packageName": "@moesol/ext-example-basic",
       "projectFolder": "es-extension-examples/ext-example-basic"
     },
@@ -422,10 +418,6 @@
     {
       "packageName": "@moesol/ext-example-vite",
       "projectFolder": "es-extension-examples/ext-example-vite"
-    },
-    {
-      "packageName": "@moesol/ext-example-webpack",
-      "projectFolder": "es-extension-examples/ext-example-webpack"
     },
     {
       "packageName": "@moesol/iframe-example",
