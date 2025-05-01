@@ -3,6 +3,7 @@
         "target": "ES2015",
         "lib": ["WebWorker", "ES2015"],
         "outDir": "../public",
+        "moduleResolution": "node"
     },
     "files": ["debug-network-service-worker.ts"]
 }
